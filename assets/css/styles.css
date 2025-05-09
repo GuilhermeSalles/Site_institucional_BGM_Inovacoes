@@ -150,6 +150,198 @@ img {
   overflow: hidden; /*For animation*/
 }
 
+/*=============== ABOUT ===============*/
+/*=============== ABOUT HERO ===============*/
+.about-hero {
+  padding: 7rem 0 2rem;
+}
+
+.about-hero__container {
+  gap: 3rem;
+}
+
+.about-hero__data {
+  text-align: center;
+}
+
+.about-hero__title {
+  font-size: var(--big-font-size);
+  margin-bottom: var(--mb-1);
+  color: var(--white-color);
+}
+
+.about-hero__description {
+  margin-bottom: var(--mb-2-5);
+  color: var(--text-color-light);
+}
+
+.about-hero__image {
+  width: 300px;
+  justify-self: center;
+}
+
+/*=============== ABOUT MVV ===============*/
+.about-mvv {
+  background-color: var(--container-color);
+  padding: 3.5rem 0;
+  border-radius: 1rem;
+  margin: 0 var(--mb-1-5) 3rem;
+}
+
+.about-mvv__content {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+}
+
+.about-card {
+  background-color: var(--body-color);
+  border-radius: 1rem;
+  padding: 2rem 1.5rem;
+  transition: .3s;
+}
+
+.about-card:hover {
+  transform: translateY(-.5rem);
+  box-shadow: 0 8px 24px hsla(var(--hue), 99%, 42%, 0.1);
+}
+
+.about-card__icon {
+  display: inline-flex;
+  background-color: var(--first-color);
+  padding: 1rem;
+  border-radius: .5rem;
+  margin-bottom: var(--mb-1);
+  font-size: 1.5rem;
+  color: var(--white-color);
+}
+
+.about-card__title {
+  font-size: var(--h3-font-size);
+  margin-bottom: var(--mb-1);
+  color: var(--white-color);
+}
+
+.about-card__description {
+  color: var(--text-color-light);
+  margin-bottom: var(--mb-1);
+}
+
+.about-card__list {
+  display: grid;
+  gap: .75rem;
+}
+
+.about-card__item {
+  display: flex;
+  align-items: flex-start;
+  gap: .5rem;
+  color: var(--text-color-light);
+}
+
+.about-card__item i {
+  font-size: 1.25rem;
+  color: var(--first-color);
+}
+
+/*=============== ABOUT FEATURES ===============*/
+.about-features {
+  padding: 0 0 3rem;
+}
+
+.about-features__content {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.feature-card {
+  background-color: var(--container-color);
+  padding: 2rem;
+  border-radius: 1rem;
+  transition: .3s;
+}
+
+.feature-card:hover {
+  transform: translateY(-.5rem);
+}
+
+.feature-card__icon {
+  font-size: 2rem;
+  color: var(--first-color);
+  margin-bottom: var(--mb-1);
+}
+
+.feature-card__title {
+  font-size: var(--h3-font-size);
+  margin-bottom: var(--mb-0-75);
+  color: var(--white-color);
+}
+
+.feature-card__description {
+  color: var(--text-color-light);
+  font-size: var(--small-font-size);
+}
+
+/*=============== ABOUT CTA ===============*/
+.about-cta {
+  background: linear-gradient(180deg, hsla(var(--hue), 99%, 42%, 0.8), hsla(var(--hue), 99%, 42%, 0.8));
+  padding: 3.5rem 0;
+  text-align: center;
+  border-radius: 1rem;
+  margin: 0 var(--mb-1-5);
+}
+
+.about-cta__title {
+  font-size: var(--h2-font-size);
+  color: var(--white-color);
+  margin-bottom: var(--mb-1);
+}
+
+.about-cta__description {
+  color: var(--first-color-lighten);
+  margin-bottom: var(--mb-2);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*=============== BREAKPOINTS ===============*/
+@media screen and (min-width: 576px) {
+  .about-hero__container {
+      grid-template-columns: repeat(2, 1fr);
+      align-items: center;
+  }
+  
+  .about-hero__data {
+      text-align: initial;
+  }
+  
+  .about-hero__image {
+      order: 1;
+  }
+  
+  .about-mvv {
+      margin: 0 var(--mb-2) 3rem;
+  }
+  
+  .about-cta {
+      margin: 0 var(--mb-2);
+  }
+}
+
+@media screen and (min-width: 968px) {
+  .about-hero {
+      padding: 10rem 0 3rem;
+  }
+  
+  .about-hero__title {
+      font-size: 2.5rem;
+  }
+  
+  .about-mvv__content {
+      gap: 4rem;
+  }
+}
 /*=============== HEADER ===============*/
 .header {
   width: 100%;
