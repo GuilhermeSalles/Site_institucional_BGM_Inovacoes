@@ -110,10 +110,6 @@ sr.reveal(`.home__social`, {delay: 200})
 sr.reveal(`.about__img, .contact__box`,{origin: 'left'})
 sr.reveal(`.about__data, .contact__form`,{origin: 'right'})
 sr.reveal(`.steps__card, .product__card, .questions__group, .footer, .card__content`,{interval: 100})
-
-// Adicione ao final do seu scrollReveal
-sr.reveal(`.about-hero__data`, {origin: 'left'});
-sr.reveal(`.about-hero__image`, {origin: 'right', delay: 100});
-sr.reveal(`, .section__title-center`, {interval: 100});
+sr.reveal(`.section__title-center`, {interval: 100});
 sr.reveal(`.feature-card, .about-differences__text`, {interval: 100});
 sr.reveal(`.about-cta__content, .about-differences__content`, {origin: 'bottom'});
