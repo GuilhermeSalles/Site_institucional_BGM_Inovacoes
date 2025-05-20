@@ -579,7 +579,8 @@ the website, in dark theme
 
 /*=============== QUESTIONS ===============*/
 .questions {
-  background: url("../img/imagensFundo/Notebook Fundo.jpg") center/cover no-repeat;
+  background: url("../img/imagensFundo/Notebook Fundo.jpg") center/cover
+    no-repeat;
   padding: 4rem 0;
   position: relative;
   overflow: hidden;
@@ -888,8 +889,29 @@ the website, in dark theme
 }
 
 /*=============== SCROLL UP ===============*/
-.scrollup {
+.glow-button {
   position: fixed;
+  background-color: hsl(116.83deg 81.83% 21.73%);
+  right: 1rem;
+  bottom: -30%;
+  display: inline-flex;
+  padding: 0.5rem;
+  border-radius: 2.25rem;
+  z-index: var(--z-tooltip);
+  opacity: 0.8;
+  transition: 0.4s;
+  border: 2px solid transparent;
+  box-shadow: 0 0 8px 2px rgba(37, 211, 102, 0.7);
+}
+
+.glow-button:hover {
+  opacity: 1;
+  border-color: hsl(116.83deg 81.83% 21.73%);
+  box-shadow: 0 0 15px 4px rgba(37, 211, 102, 1);
+}
+
+.scrollup {
+  /* position: fixed;
   background-color: var(--first-color);
   right: 1rem;
   bottom: -30%;
@@ -898,16 +920,26 @@ the website, in dark theme
   border-radius: 0.25rem;
   z-index: var(--z-tooltip);
   opacity: 0.8;
+  transition: 0.4s; */
+  position: fixed;
+  background-color: hsl(116.83deg 81.83% 21.73%);
+  right: 1rem;
+  bottom: -30%;
+  display: inline-flex;
+  padding: 4px;
+  border-radius: 2.25rem;
+  z-index: var(--z-tooltip);
+  opacity: 1;
   transition: 0.4s;
 }
 
 .scrollup__icon {
-  font-size: 1rem;
+  font-size: 32px;
   color: #fff;
 }
 
 .scrollup:hover {
-  background-color: var(--first-color-alt);
+  background-color: hsl(117, 84%, 29%);
   opacity: 1;
 }
 
