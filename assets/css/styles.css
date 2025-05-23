@@ -1331,12 +1331,10 @@ img {
 }
 
 .card__pricing-symbol {
-  font-size: var(--smaller-font-size);
   color: #ffffff;
 }
 
 .card__pricing-number {
-  font-size: var(--h2-font-size);
 }
 
 .card__pricing-month {
