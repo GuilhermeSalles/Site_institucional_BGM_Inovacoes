@@ -1583,7 +1583,7 @@ input[type="submit"]:hover {
 
 @media (max-width: 480px) {
   .modal-content {
-    width: calc(100% - 2rem); /* Largura total menos o padding */
+    width: 100%; /* Largura total menos o padding */
     margin: 0; /* Remove a margem em telas muito pequenas */
     padding-left: 1rem; /* Padding à esquerda */
     padding-right: 1rem; /* Padding à direita */
