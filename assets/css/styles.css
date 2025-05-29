@@ -988,7 +988,7 @@ the website, in dark theme
   .questions {
     padding: 2rem 0px 3rem;
   }
-   .modal{
+  .modal {
     padding: 4rem 0 1rem 0rem;
   }
 }
@@ -1014,13 +1014,13 @@ the website, in dark theme
   .questions {
     padding: 2rem 0px 10rem;
   }
-   .modal{
+  .modal {
     padding: 4rem 0 1rem 0rem;
   }
 }
 
 @media screen and (min-width: 767px) {
-   .modal{
+  .modal {
     padding: 4rem 0 1rem 0rem;
   }
   .questions {
@@ -1083,9 +1083,9 @@ the website, in dark theme
 /* For large devices */
 @media screen and (min-width: 992px) {
   .questions {
-    padding: 2rem 0px 40rem;
+    padding: 2rem 0px 45rem;
   }
-   .modal{
+  .modal {
     padding: 4rem 0 1rem 2rem;
   }
   .container {
@@ -1196,10 +1196,10 @@ the website, in dark theme
     right: 3rem;
   }
   .questions {
-    padding: 2rem 0px 40rem;
+    padding: 2rem 0px 45rem;
   }
 
-  .modal{
+  .modal {
     padding: 4rem 0 1rem 2rem;
   }
 }
@@ -1467,7 +1467,7 @@ img {
     margin-right: auto;
   }
   .card {
-    height: 55vh;
+    height: 65vh;
     align-items: center;
   }
   .card__container {
