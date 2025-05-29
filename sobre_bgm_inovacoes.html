@@ -439,6 +439,188 @@
                 font-size: 1.4rem;
             }
         }
+
+        /* 
+        * ? Nosso Team 
+        */
+
+        /*=============== ABOUT TEAM ===============*/
+        .about-team {
+            background: url('assets/img/imagensFundo/Reunião\ 3.jpg') center/cover no-repeat;
+            padding: 7.5rem 0;
+            border-radius: 1rem;
+            margin: 0 var(--mb-1-5) 3rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        /* Overlay para melhorar legibilidade do texto */
+        .about-team::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            /* Ajuste a opacidade conforme necessário */
+            z-index: -1;
+        }
+
+        /* Se quiser manter um pouco do gradiente sobre a imagem */
+        .about-team::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg,
+                    hsla(219, 80%, 59%, 0.4),
+                    hsla(266, 100%, 48%, 0.4));
+            z-index: -1;
+        }
+
+        .about-team__header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .about-team__slogan {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            font-style: italic;
+        }
+
+        .team-cards {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .team-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 1rem;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .team-card__photo {
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .team-card__img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .team-card:hover .team-card__img {
+            transform: scale(1.05);
+        }
+
+        .team-card__social {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .team-card:hover .team-card__social {
+            opacity: 1;
+        }
+
+        .team-card__social a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .team-card__social a:hover {
+            color: var(--first-color);
+        }
+
+        .team-card__info {
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .team-card__name {
+            color: white;
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .team-card__role {
+            color: var(--first-color);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .team-card__description {
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.6;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .team-card__skills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .team-skill {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 2rem;
+            font-size: 0.8rem;
+            border: 1px solid var(--first-color);
+        }
+
+        /*=============== BREAKPOINTS ===============*/
+        @media screen and (min-width: 768px) {
+            .about-team {
+                padding: 7rem 0;
+            }
+
+            .team-cards {
+                gap: 2.5rem;
+            }
+        }
+
+        @media screen and (min-width: 992px) {
+            .about-team__header {
+                margin-bottom: 4rem;
+            }
+
+            .team-card__photo {
+                height: 300px;
+            }
+        }
     </style>
 
 </head>
@@ -624,6 +806,96 @@
                             ambiente corporativo transparente e ético. Isso inclui políticas claras, canal de ouvidoria
                             e compromisso com a conformidade legal.
                         </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--==================== NOSSO TIME ====================-->
+        <section class="about-team section" style="margin-top: 6rem;">
+            <div class="about-team__container container">
+                <div class="about-team__header">
+                    <h2 class="section__title-center" style="color: #ffffff;">Conheça Nosso Time</h2>
+                    <p class="about-team__slogan">Profissionais dedicados transformando sua visão em realidade digital
+                    </p>
+                </div>
+
+                <div class="about-mvv__content grid">
+                    <!-- Card Bruno -->
+                    <div class="team-card">
+                        <div class="team-card__photo">
+                            <img src="assets/img/imagensFundo/Planta.jpg" alt="Bruno - Desenvolvedor Front-end"
+                                class="team-card__img">
+                            <!-- <div class="team-card__social">
+                                <a href="#" aria-label="LinkedIn do Bruno"><i class="ri-linkedin-fill"></i></a>
+                                <a href="#" aria-label="GitHub do Bruno"><i class="ri-github-fill"></i></a>
+                                <a href="#" aria-label="Portfólio do Bruno"><i class="ri-briefcase-fill"></i></a>
+                            </div> -->
+                        </div>
+                        <div class="team-card__info">
+                            <h3 class="team-card__name">Bruno Silva</h3>
+                            <p class="team-card__role">Desenvolvedor Front-end</p>
+                            <p class="team-card__description">
+                                Especialista em React e Vue.js com 5+ anos de experiência criando interfaces ricas e
+                                responsivas.
+                            </p>
+                            <div class="team-card__skills">
+                                <span class="team-skill">JavaScript</span>
+                                <span class="team-skill">React</span>
+                                <span class="team-skill">UI/UX</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card Guilherme -->
+                    <div class="team-card">
+                        <div class="team-card__photo">
+                            <img src="assets/img/imagensFundo/Planta.jpg" alt="Guilherme - Desenvolvedor Back-end"
+                                class="team-card__img">
+                            <!-- <div class="team-card__social">
+                                <a href="#" aria-label="LinkedIn do Guilherme"><i class="ri-linkedin-fill"></i></a>
+                                <a href="#" aria-label="GitHub do Guilherme"><i class="ri-github-fill"></i></a>
+                                <a href="#" aria-label="Portfólio do Guilherme"><i class="ri-briefcase-fill"></i></a>
+                            </div> -->
+                        </div>
+                        <div class="team-card__info">
+                            <h3 class="team-card__name">Guilherme Costa</h3>
+                            <p class="team-card__role">Desenvolvedor Back-end</p>
+                            <p class="team-card__description">
+                                Expert em Node.js e arquitetura de sistemas, garantindo performance e segurança em todos
+                                os projetos.
+                            </p>
+                            <div class="team-card__skills">
+                                <span class="team-skill">Node.js</span>
+                                <span class="team-skill">Python</span>
+                                <span class="team-skill">SQL</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card Mateus -->
+                    <div class="team-card">
+                        <div class="team-card__photo">
+                            <img src="assets/img/imagensFundo/Planta.jpg" alt="Mateus - Designer UI/UX" class="team-card__img">
+                            <!-- <div class="team-card__social">
+                                <a href="#" aria-label="LinkedIn do Mateus"><i class="ri-linkedin-fill"></i></a>
+                                <a href="#" aria-label="Behance do Mateus"><i class="ri-behance-fill"></i></a>
+                                <a href="#" aria-label="Portfólio do Mateus"><i class="ri-briefcase-fill"></i></a>
+                            </div> -->
+                        </div>
+                        <div class="team-card__info">
+                            <h3 class="team-card__name">Mateus Oliveira</h3>
+                            <p class="team-card__role">Designer UI/UX</p>
+                            <p class="team-card__description">
+                                Criativo e detalhista, transforma conceitos complexos em designs intuitivos e
+                                visualmente impressionantes.
+                            </p>
+                            <div class="team-card__skills">
+                                <span class="team-skill">Figma</span>
+                                <span class="team-skill">Photoshop</span>
+                                <span class="team-skill">UX Research</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

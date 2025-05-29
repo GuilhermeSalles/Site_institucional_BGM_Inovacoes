@@ -104,7 +104,7 @@
         <!--==================== HOME ====================-->
         <section class="home" id="home">
             <div class="home__container container grid">
-                <img src="assets/img/home.png" alt="Ilustração mostrando crescimento de negócios" class="home__img">
+                <img src="assets/img/home.svg" alt="Ilustração mostrando crescimento de negócios" class="home__img">
 
                 <div class="home__data">
                     <h1 class="home__title">
@@ -290,7 +290,7 @@
         </section> -->
 
         <!--==================== PLANS ====================-->
-        <section class="questions section" id="plans" aria-labelledby="plans-title" style="padding: 2rem 0px 39rem">
+        <section class="questions section" id="plans" aria-labelledby="plans-title">
             <h2 id="plans-title" class="section__title-center questions__title container" style="color: #ffffff;">
                 Escolha o Plano Perfeito para Você!
             </h2>
@@ -308,7 +308,7 @@
 
                         <header class="card__header">
                             <div class="card__header-circle grid">
-                                <img src="assets/img/free-coin.png" alt="Ícone do plano gratuito"
+                                <img src="assets/img/bronze.png" alt="Ícone do plano Essencial"
                                     class="card__header-img">
                             </div>
                             <span class="card__header-subtitle">Para Pequenos Negócios</span>
@@ -318,29 +318,29 @@
                         <ul class="card__list grid">
                             <li class="card__list-item">
                                 <i class="uil uil-check card__list-icon" aria-hidden="true"></i>
-                                <p class="card__list-description">Site de uma página</p>
+                                <p class="card__list-description">Landing Page profissional</p>
                             </li>
                             <li class="card__list-item">
                                 <i class="uil uil-check card__list-icon" aria-hidden="true"></i>
-                                <p class="card__list-description">Imagens da empresa/negócio</p>
+                                <p class="card__list-description">Tratamento de 5 imagens</p>
                             </li>
                             <li class="card__list-item">
                                 <i class="uil uil-check card__list-icon" aria-hidden="true"></i>
-                                <p class="card__list-description">Mapa de localização</p>
+                                <p class="card__list-description">Mapa de localização integrado</p>
                             </li>
                             <li class="card__list-item">
                                 <i class="uil uil-check card__list-icon" aria-hidden="true"></i>
-                                <p class="card__list-description">Botão para WhatsApp</p>
+                                <p class="card__list-description">Botão WhatsApp conversor</p>
                             </li>
                             <li class="card__list-item">
                                 <i class="uil uil-check card__list-icon" aria-hidden="true"></i>
-                                <p class="card__list-description">SEO otimizado</p>
+                                <p class="card__list-description">SEO básico incluído</p>
                             </li>
-
                         </ul>
 
-                        <button class="card__button" aria-label="Choose the Basic plan">Ver mais sobre esse
-                            Plano</button>
+                        <button class="card__button" aria-label="Ver detalhes do Plano Essencial" data-plan="essencial">
+                            Ver detalhes completos
+                        </button>
                     </article>
 
                     <!--==================== CARD 2 ====================-->
@@ -354,36 +354,40 @@
 
                         <header class="card__header">
                             <div class="card__header-circle grid">
-                                <img src="assets/img/pro-coin.png" alt="Ícone do plano profissional"
+                                <img src="assets/img/silver.png" alt="Ícone do plano Profissional"
                                     class="card__header-img">
                             </div>
-                            <span class="card__header-subtitle">Para Negócios de Beleza e Desenvolvimento Pessoal</span>
+                            <span class="card__header-subtitle">Para Profissionais Autônomos</span>
                             <h1 id="professional-plan-title" class="card__header-title">Plano Profissional</h1>
                         </header>
 
                         <ul class="card__list grid">
                             <li class="card__list-item">
                                 <i class="uil uil-check card__list-icon" aria-hidden="true"></i>
-                                <p class="card__list-description">Instagram</p>
+                                <p class="card__list-description">Instagram profissional</p>
                             </li>
                             <li class="card__list-item">
                                 <i class="uil uil-check card__list-icon" aria-hidden="true"></i>
-                                <p class="card__list-description">Edição de 3ximagens e 1xvideo</p>
+                                <p class="card__list-description">Edição de 3 fotos + 1 vídeo</p>
                             </li>
                             <li class="card__list-item">
                                 <i class="uil uil-check card__list-icon" aria-hidden="true"></i>
-                                <p class="card__list-description">Site de uma pagina</p>
+                                <p class="card__list-description">Site one-page premium</p>
                             </li>
                             <li class="card__list-item">
                                 <i class="uil uil-check card__list-icon" aria-hidden="true"></i>
-                                <p class="card__list-description">Formulário de E-mail</p>
+                                <p class="card__list-description">Formulário de captação</p>
                             </li>
-
-
+                            <li class="card__list-item">
+                                <i class="uil uil-check card__list-icon" aria-hidden="true"></i>
+                                <p class="card__list-description">SEO intermediário</p>
+                            </li>
                         </ul>
 
-                        <button class="card__button" aria-label="Choose the Professional plan">Ver mais sobre esse
-                            Plano</button>
+                        <button class="card__button" aria-label="Ver detalhes do Plano Profissional"
+                            data-plan="profissional">
+                            Ver detalhes completos
+                        </button>
                     </article>
 
                     <!--==================== CARD 3 ====================-->
@@ -397,43 +401,44 @@
 
                         <header class="card__header">
                             <div class="card__header-circle grid">
-                                <img src="assets/img/enterprise-coin.png" alt="Ícone do plano Enterprise"
+                                <img src="assets/img/gold.png" alt="Ícone do plano Empresarial"
                                     class="card__header-img">
                             </div>
-                            <span class="card__header-subtitle">Para Grandes Negócios</span>
+                            <span class="card__header-subtitle">Para Empresas em Crescimento</span>
                             <h1 id="enterprise-plan-title" class="card__header-title">Plano Empresarial</h1>
                         </header>
 
                         <ul class="card__list grid">
                             <li class="card__list-item">
                                 <i class="uil uil-check card__list-icon" aria-hidden="true"></i>
-                                <p class="card__list-description">Site completo com múltiplas páginas</p>
+                                <p class="card__list-description">Site institucional completo</p>
                             </li>
                             <li class="card__list-item">
                                 <i class="uil uil-check card__list-icon" aria-hidden="true"></i>
-                                <p class="card__list-description">Sistema com banco de dados</p>
+                                <p class="card__list-description">Banco de dados integrado</p>
                             </li>
                             <li class="card__list-item">
                                 <i class="uil uil-check card__list-icon" aria-hidden="true"></i>
-                                <p class="card__list-description">Preparado para anúncios online</p>
+                                <p class="card__list-description">Otimizado para anúncios</p>
                             </li>
                             <li class="card__list-item">
                                 <i class="uil uil-check card__list-icon" aria-hidden="true"></i>
-                                <p class="card__list-description">Edição de 5ximagens e 3xvideo</p>
+                                <p class="card__list-description">Edição de 5 fotos + 3 vídeos</p>
                             </li>
                             <li class="card__list-item">
                                 <i class="uil uil-check card__list-icon" aria-hidden="true"></i>
-                                <p class="card__list-description">SEO otimizado</p>
+                                <p class="card__list-description">SEO avançado</p>
                             </li>
-
                         </ul>
 
-                        <button class="card__button" aria-label="Choose the Enterprise plan">Ver mais sobre esse
-                            Plano</button>
+                        <button class="card__button" aria-label="Ver detalhes do Plano Empresarial"
+                            data-plan="empresarial">
+                            Ver detalhes completos
+                        </button>
                     </article>
 
                     <!--==================== CARD 4 ====================-->
-                    <article class="card__content grid" aria-labelledby="enterprise-plan-title">
+                    <article class="card__content grid" aria-labelledby="social-basic-title">
                         <div class="card__pricing">
                             <div class="card__pricing-number">
                                 <span class="card__pricing-symbol">R$ </span>99,90
@@ -443,43 +448,44 @@
 
                         <header class="card__header">
                             <div class="card__header-circle grid">
-                                <img src="assets/img/enterprise-coin.png" alt="Ícone do plano Enterprise"
+                                <img src="assets/img/bronze.png" alt="Ícone do Rede Social Básico"
                                     class="card__header-img">
                             </div>
-                            <span class="card__header-subtitle">Para Vendas Online</span>
-                            <h1 id="enterprise-plan-title" class="card__header-title">Plano Rede Social Basico</h1>
+                            <span class="card__header-subtitle">Para Iniciar nas Vendas Online</span>
+                            <h1 id="social-basic-title" class="card__header-title">Rede Social Básico</h1>
                         </header>
 
                         <ul class="card__list grid">
                             <li class="card__list-item">
                                 <i class="uil uil-check card__list-icon" aria-hidden="true"></i>
-                                <p class="card__list-description">5ximagens 2xvideos</p>
+                                <p class="card__list-description">5 fotos + 2 vídeos/mês</p>
                             </li>
                             <li class="card__list-item">
                                 <i class="uil uil-check card__list-icon" aria-hidden="true"></i>
-                                <p class="card__list-description">Instagram configurado</p>
+                                <p class="card__list-description">Instagram profissional</p>
                             </li>
                             <li class="card__list-item">
                                 <i class="uil uil-check card__list-icon" aria-hidden="true"></i>
-                                <p class="card__list-description">Sistema de pagamento integrado</p>
+                                <p class="card__list-description">Pagamentos integrados</p>
                             </li>
                             <li class="card__list-item">
                                 <i class="uil uil-check card__list-icon" aria-hidden="true"></i>
-                                <p class="card__list-description">Gestão de produtos e estoque</p>
+                                <p class="card__list-description">Controle de estoque</p>
                             </li>
                             <li class="card__list-item">
                                 <i class="uil uil-check card__list-icon" aria-hidden="true"></i>
-                                <p class="card__list-description">Ferramentas de marketing e SEO</p>
+                                <p class="card__list-description">Ferramentas de marketing</p>
                             </li>
-
                         </ul>
 
-                        <button class="card__button" aria-label="Choose the Enterprise plan">Ver mais sobre esse
-                            Plano</button>
+                        <button class="card__button" aria-label="Ver detalhes do Rede Social Básico"
+                            data-plan="rede-social-basico">
+                            Ver detalhes completos
+                        </button>
                     </article>
 
-                    <!--==================== CARD 4 ====================-->
-                    <article class="card__content grid" aria-labelledby="enterprise-plan-title">
+                    <!--==================== CARD 5 ====================-->
+                    <article class="card__content grid" aria-labelledby="social-intermediate-title">
                         <div class="card__pricing">
                             <div class="card__pricing-number">
                                 <span class="card__pricing-symbol">R$ </span>140,00
@@ -489,44 +495,44 @@
 
                         <header class="card__header">
                             <div class="card__header-circle grid">
-                                <img src="assets/img/enterprise-coin.png" alt="Ícone do plano Enterprise"
+                                <img src="assets/img/silver.png" alt="Ícone do Rede Social Intermediário"
                                     class="card__header-img">
                             </div>
-                            <span class="card__header-subtitle">Para Vendas Online</span>
-                            <h1 id="enterprise-plan-title" class="card__header-title">Plano Rede Social Intermediario
-                            </h1>
+                            <span class="card__header-subtitle">Para Vendas em Crescimento</span>
+                            <h1 id="social-intermediate-title" class="card__header-title">Rede Social Intermediário</h1>
                         </header>
 
                         <ul class="card__list grid">
                             <li class="card__list-item">
                                 <i class="uil uil-check card__list-icon" aria-hidden="true"></i>
-                                <p class="card__list-description">10ximagens 2xvideos</p>
+                                <p class="card__list-description">10 fotos + 2 vídeos/mês</p>
                             </li>
                             <li class="card__list-item">
                                 <i class="uil uil-check card__list-icon" aria-hidden="true"></i>
-                                <p class="card__list-description">Instagram configurado</p>
+                                <p class="card__list-description">Instagram premium</p>
                             </li>
                             <li class="card__list-item">
                                 <i class="uil uil-check card__list-icon" aria-hidden="true"></i>
-                                <p class="card__list-description">Sistema de pagamento integrado</p>
+                                <p class="card__list-description">Checkout simplificado</p>
                             </li>
                             <li class="card__list-item">
                                 <i class="uil uil-check card__list-icon" aria-hidden="true"></i>
-                                <p class="card__list-description">Gestão de produtos e estoque</p>
+                                <p class="card__list-description">Gestão de estoque avançada</p>
                             </li>
                             <li class="card__list-item">
                                 <i class="uil uil-check card__list-icon" aria-hidden="true"></i>
-                                <p class="card__list-description">Ferramentas de marketing e SEO</p>
+                                <p class="card__list-description">SEO profissional</p>
                             </li>
-
                         </ul>
 
-                        <button class="card__button" aria-label="Choose the Enterprise plan">Ver mais sobre esse
-                            Plano</button>
+                        <button class="card__button" aria-label="Ver detalhes do Rede Social Intermediário"
+                            data-plan="rede-social-intermediario">
+                            Ver detalhes completos
+                        </button>
                     </article>
 
-                    <!--==================== CARD 4 ====================-->
-                    <article class="card__content grid" aria-labelledby="enterprise-plan-title">
+                    <!--==================== CARD 6 ====================-->
+                    <article class="card__content grid" aria-labelledby="social-premium-title">
                         <div class="card__pricing">
                             <div class="card__pricing-number">
                                 <span class="card__pricing-symbol">R$ </span>200,00
@@ -536,119 +542,115 @@
 
                         <header class="card__header">
                             <div class="card__header-circle grid">
-                                <img src="assets/img/enterprise-coin.png" alt="Ícone do plano Enterprise"
+                                <img src="assets/img/gold.png" alt="Ícone do Rede Social Premium"
                                     class="card__header-img">
                             </div>
-                            <span class="card__header-subtitle">Para Vendas Online</span>
-                            <h1 id="enterprise-plan-title" class="card__header-title">Plano Rede Social Premium</h1>
+                            <span class="card__header-subtitle">Para Lojas Consolidadas</span>
+                            <h1 id="social-premium-title" class="card__header-title">Rede Social Premium</h1>
                         </header>
 
                         <ul class="card__list grid">
                             <li class="card__list-item">
                                 <i class="uil uil-check card__list-icon" aria-hidden="true"></i>
-                                <p class="card__list-description">10ximagens 4xvideos</p>
+                                <p class="card__list-description">10 fotos + 4 vídeos/mês</p>
                             </li>
                             <li class="card__list-item">
                                 <i class="uil uil-check card__list-icon" aria-hidden="true"></i>
-                                <p class="card__list-description">Instagram configurado</p>
+                                <p class="card__list-description">Instagram loja integrada</p>
                             </li>
                             <li class="card__list-item">
                                 <i class="uil uil-check card__list-icon" aria-hidden="true"></i>
-                                <p class="card__list-description">Sistema de pagamento integrado</p>
+                                <p class="card__list-description">Sistema de pagamento completo</p>
                             </li>
                             <li class="card__list-item">
                                 <i class="uil uil-check card__list-icon" aria-hidden="true"></i>
-                                <p class="card__list-description">Gestão de produtos e estoque</p>
+                                <p class="card__list-description">Estoque inteligente</p>
                             </li>
                             <li class="card__list-item">
                                 <i class="uil uil-check card__list-icon" aria-hidden="true"></i>
-                                <p class="card__list-description">Ferramentas de marketing e SEO</p>
+                                <p class="card__list-description">Marketing avançado</p>
                             </li>
-
                         </ul>
 
-                        <button class="card__button" aria-label="Choose the Enterprise plan">Ver mais sobre esse
-                            Plano</button>
+                        <button class="card__button" aria-label="Ver detalhes do Rede Social Premium"
+                            data-plan="rede-social-premium">
+                            Ver detalhes completos
+                        </button>
                     </article>
                 </div>
             </section>
         </section>
 
+        <!-- Modal de Detalhes do Plano -->
+        <div id="planModal" class="modal">
+            <div class="modal__content">
+                <span class="modal__close">&times;</span>
 
-        <!-- Modal Content -->
-        <div id="plan-modal" class="modal">
-            <div class="modal-content" role="document">
-                <span class="close" aria-label="Close modal">&times;</span>
-                <h2 id="modalTitle">Informações</h2>
-                <p style="padding: 2rem 0;">Por favor, preencha este formulário para que
-                    possamos entrar em contato com você!</p>
-                <form id="modalForm" action="processar_formulario.php" method="POST">
-                    <input type="hidden" id="planType" name="planType">
+                <div class="modal__header">
+                    <img id="modalPlanIcon" src="" alt="" class="modal__icon">
+                    <h2 id="modalPlanTitle" class="modal__title"></h2>
+                    <p id="modalPlanSubtitle" class="modal__subtitle"></p>
+                </div>
 
-                    <label for="name">Nome Completo:</label>
-                    <input type="text" id="name" name="user_name" required aria-required="true"
-                        placeholder="Digite seu nome completo"><br>
+                <div class="modal__pricing">
+                    <span id="modalPlanPrice" class="modal__price"></span>
+                    <span class="modal__month">/Mês</span>
+                </div>
 
-                    <label for="email">Melhor E-mail:</label>
-                    <input type="email" id="email" name="user_email" required aria-required="true"
-                        placeholder="Digite seu e-mail"><br>
+                <div class="modal__features-container">
+                    <h3 class="modal__features-title">O que você recebe:</h3>
+                    <ul id="modalPlanFeatures" class="modal__features">
+                        <!-- Features serão inseridas aqui pelo JavaScript -->
+                    </ul>
+                </div>
 
-                    <label for="phone">Telefone para Contato:</label>
-                    <input type="tel" id="phone" name="user_tel" required aria-required="true"
-                        placeholder="Digite seu telefone para contato"><br>
+                <div class="modal__why-choose">
+                    <h3 class="modal__why-choose-title">Por que escolher a BGM?</h3>
+                    <p id="modalWhyChoose" class="modal__why-choose-text"></p>
+                </div>
 
-                    <button type="submit" class="card__button">Enviar</button>
-                </form>
-
+                <div class="modal__actions">
+                    <a class="modal__button modal__button-primary">
+                        <i class="ri-whatsapp-line"></i> Contratar pelo WhatsApp
+                    </a>
+                    <button class="modal__button modal__button-secondary open-proposal-modal" data-plan="">
+                        <i class="ri-mail-line"></i> Solicitar proposta
+                    </button>
+                </div>
             </div>
         </div>
 
-        <script>
-            // Get the modal
-            var modal = document.getElementById("plan-modal");
+        <!-- Modal Content -->
+        <div id="proposalModal" class="modal">
+            <div class="modal-content" role="document">
+                <span class="close" aria-label="Close modal">&times;</span>
+                <h2 id="modalTitle">Informações</h2>
+                <p style="padding: 2rem 0;">Por favor, preencha este formulário para que possamos entrar em contato com
+                    você!</p>
 
-            // Get the buttons that open the modal
-            var btns = document.getElementsByClassName("card__button");
+                <form id="modalForm" action="processar_formulario.php" method="POST">
+                    <input type="hidden" id="planType" name="planType" value="">
 
-            // Get the <button> element that closes the modal
-            var closeButton = document.querySelector(".close");
+                    <label for="name">Nome Completo:</label>
+                    <input type="text" id="name" name="user_name" required placeholder="Digite seu nome completo"><br>
 
-            // Get the hidden input field for the plan type
-            var planTypeInput = document.getElementById("planType");
+                    <label for="email">Melhor E-mail:</label>
+                    <input type="email" id="email" name="user_email" class="email-input" required
+                        placeholder="Digite seu e-mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"><br>
 
-            // When the user clicks the button, open the modal and set the plan type
-            for (let btn of btns) {
-                btn.addEventListener('click', function () {
-                    // Get the exact plan title from the card
-                    var planTitle = this.closest('.card__content').querySelector(".card__header-title").innerText.trim();
+                    <label for="phone">Telefone para Contato:</label>
+                    <input type="tel" id="phone" name="user_tel" class="phone-input" required
+                        placeholder="Digite seu telefone para contato"><br>
 
-                    // Set the hidden input field value
-                    planTypeInput.value = planTitle;
+                    <label for="idea">Descreva sua ideia:</label>
+                    <textarea id="idea" name="user_idea" rows="4" required
+                        placeholder="Conte um pouco sobre sua ideia"></textarea><br>
 
-                    // Open the modal
-                    modal.style.display = "block";
-                    modal.setAttribute("aria-hidden", "false");
-                });
-            }
+                    <button type="submit" class="card__button">Enviar</button>
+                </form>
+            </div>
+        </div>
 
-            // When the user clicks on <button> (x), close the modal
-            closeButton.addEventListener('click', function () {
-                modal.style.display = "none";
-                modal.setAttribute("aria-hidden", "true");
-            });
-
-            // When the user clicks anywhere outside of the modal, close it
-            window.addEventListener('click', function (event) {
-                if (event.target == modal) {
-                    modal.style.display = "none";
-                    modal.setAttribute("aria-hidden", "true");
-                }
-            });
-
-            document.getElementById('modalForm').addEventListener('submit', function () {
-                this.querySelector('button[type="submit"]').innerHTML = 'Enviando...';
-            });
-        </script>
 
         </section>
 
