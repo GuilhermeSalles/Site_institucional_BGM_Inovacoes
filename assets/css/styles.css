@@ -1365,9 +1365,6 @@ img {
   color: #ffffff;
 }
 
-.card__pricing-number {
-}
-
 .card__pricing-month {
   display: block;
   font-size: var(--tiny-font-size);
