@@ -579,7 +579,7 @@ the website, in dark theme
 
 /*=============== QUESTIONS ===============*/
 .questions {
-  background: url("../img/imagensFundo/Notebook Fundo.jpg") center/cover
+  background: url("../img/fundos/Reuniões/Reunião01.webp") center/cover
     no-repeat;
   padding: 4rem 0;
   position: relative;
@@ -1543,7 +1543,7 @@ img {
     margin-right: auto;
   }
   .card {
-    height: 80vh;
+    height: 94vh;
     align-items: center;
   }
   .card__container {
@@ -1927,4 +1927,63 @@ select {
 .modal__button i {
   margin-right: 0.5rem;
   font-size: 1.2rem;
+}
+
+.footer {
+    background-color: var(--container-color); /* Ou um tom escuro para contraste */
+    padding: 2rem 1rem;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer__content {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.footer__text {
+    font-size: 0.95rem;
+    color: var(--text-color-light);
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+.developer-credit {
+    font-size: 0.85rem;
+    color: var(--text-color-light);
+}
+
+.developer-credit a {
+    color: var(--first-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.developer-credit a:hover {
+    color: var(--first-color-alt);
+    text-decoration: underline;
+}
+
+.mobile-break {
+    display: none;
+}
+
+/* Responsivo */
+@media screen and (max-width: 768px) {
+    .footer {
+        padding: 1.5rem 1rem;
+    }
+
+    .footer__text {
+        font-size: 0.9rem;
+    }
+
+    .developer-credit {
+        font-size: 0.8rem;
+    }
+
+    .mobile-break {
+        display: inline;
+    }
 }

@@ -580,25 +580,31 @@ document.addEventListener("keydown", function (event) {
 // ! Phone mask!
 //  */
 
-document.addEventListener('DOMContentLoaded', function() {
-        const phoneInput = document.getElementById('phone');
-        
-        phoneInput.addEventListener('input', function(e) {
-            // Remove todos os caracteres que não são números
-            let value = e.target.value.replace(/\D/g, '');
-            
-            // Aplica a máscara de telefone
-            if (value.length > 0) {
-                // Telefone fixo (10 dígitos) ou celular (11 dígitos)
-                if (value.length <= 10) {
-                    // Formato: (00) 0000-0000
-                    value = value.replace(/^(\d{2})(\d{4})(\d{4})$/, '($1) $2-$3');
-                } else {
-                    // Formato: (00) 00000-0000
-                    value = value.replace(/^(\d{2})(\d{5})(\d{4})$/, '($1) $2-$3');
-                }
-            }
-            
-            e.target.value = value;
-        });
-    });
+document.addEventListener("DOMContentLoaded", function () {
+  const phoneInput = document.getElementById("phone");
+
+  phoneInput.addEventListener("input", function (e) {
+    // Remove todos os caracteres que não são números
+    let value = e.target.value.replace(/\D/g, "");
+
+    // Aplica a máscara de telefone
+    if (value.length > 0) {
+      // Telefone fixo (10 dígitos) ou celular (11 dígitos)
+      if (value.length <= 10) {
+        // Formato: (00) 0000-0000
+        value = value.replace(/^(\d{2})(\d{4})(\d{4})$/, "($1) $2-$3");
+      } else {
+        // Formato: (00) 00000-0000
+        value = value.replace(/^(\d{2})(\d{5})(\d{4})$/, "($1) $2-$3");
+      }
+    }
+
+    e.target.value = value;
+  });
+});
+
+/**
+ * !Ano automatico
+ */
+
+document.querySelector(".year").textContent = new Date().getFullYear();
