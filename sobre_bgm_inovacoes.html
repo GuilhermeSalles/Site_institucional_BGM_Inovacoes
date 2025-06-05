@@ -15,7 +15,7 @@
     <meta itemprop="name" content="BGM - Inovações e Soluções">
     <meta itemprop="description"
         content="Conheça a BGM - Inovações e Soluções. Nossa missão, visão e valores que nos tornam referência em desenvolvimento de sites acessíveis e de alta performance.">
-    <meta itemprop="image" content="https://bgminovacoes.com.br/assets/img/imagensFundo/logoLink.jpg">
+    <meta itemprop="image" content="https://bgminovacoes.com.br/assets/img/Logo Grande - PNG.png">
     <link rel="publisher" href="https://bgminovacoes.com.br/">
 
     <!-- Open Graph Facebook / WhatsApp -->
@@ -25,7 +25,7 @@
     <meta property="og:url" content="https://bgminovacoes.com.br/">
     <meta property="og:site_name" content="BGM - Inovações e Soluções">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://bgminovacoes.com.br/assets/img/imagensFundo/logoLink.jpg">
+    <meta property="og:image" content="https://bgminovacoes.com.br/assets/img/Logo Grande - PNG.png">
     <meta property="og:image:width" content="1080">
     <meta property="og:image:height" content="1080">
 
@@ -445,6 +445,44 @@
         */
 
         /*=============== ABOUT TEAM ===============*/
+        .photo {
+            background: url('assets/img/imagensFundo/Reunião 3.jpg') center/cover no-repeat;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        /* Gradiente azul com opacidade */
+        .photo::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 0, 255, 0.1), rgba(0, 128, 255, 0.1));
+            z-index: 2;
+            /* precisa estar acima do background da .photo */
+            pointer-events: none;
+        }
+
+        /* Camada de cor sólida ou escura opcional */
+        .photo::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 255, 0.1);
+            /* Azul com opacidade 0.1 */
+            z-index: -1;
+        }
+
+
+
+
         .about-team {
             background: url('assets/img/imagensFundo/Reunião\ 3.jpg') center/cover no-repeat;
             padding: 7.5rem 0;
@@ -477,9 +515,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg,
-                    hsla(219, 80%, 59%, 0.4),
-                    hsla(266, 100%, 48%, 0.4));
+            background: linear-gradient(135deg, hsl(125.13deg 100% 28.42% / 40%), hsl(205.44deg 100% 48% / 40%));
             z-index: -1;
         }
 
@@ -671,15 +707,17 @@
                 <div class="about-hero__data">
                     <h1 class="about-hero__title">Sobre a BGM Inovações</h1>
                     <p class="about-hero__description">
-                        Somos a BGM Inovações tecnologia acessível que impulsiona negócios.
-                        Acreditamos que toda empresa, independente do tamanho, merece ter uma presença digital forte,
-                        profissional e eficiente. Fundada com o propósito de democratizar o acesso à tecnologia, a BGM
-                        nasceu para transformar a forma como pequenos e médios negócios se posicionam no mundo digital.
+                        Na BGM Inovações, tornamos a tecnologia acessível para impulsionar negócios de todos os
+                        tamanhos.
+                        <br><br>
+                        Acreditamos que cada empresa merece uma presença digital forte, profissional e eficiente.
+                        Nossa missão é democratizar o acesso à tecnologia, oferecendo soluções que transformam a forma
+                        como pequenos e médios negócios atuam no mundo digital.
                     </p>
                 </div>
-                <div class="about-hero__image">
-                    <img src="assets/img/bgm.gif" alt="Equipe BGM trabalhando em soluções digitais" loading="lazy"
-                        style="border-radius: 10px;">
+                <div class="about-hero__image photo">
+                    <img src="assets/img/Logo Grande - PNG.png" alt="Equipe BGM trabalhando em soluções digitais"
+                        loading="lazy">
                 </div>
             </div>
         </section>
@@ -695,9 +733,9 @@
                         </div>
                         <h3 class="about-card__title">Missão</h3>
                         <p class="about-card__description">
-                            Oferecer soluções digitais acessíveis, rápidas e personalizadas, ajudando pequenos e médios
-                            negócios a fortalecerem sua presença online com sites profissionais, funcionais e
-                            otimizados.
+                            Entregar soluções digitais acessíveis, rápidas e personalizadas que ajudem pequenos e médios
+                            negócios a fortalecer sua presença online com sites profissionais e otimizados para
+                            performance e resultados.
                         </p>
                     </div>
 
@@ -708,8 +746,8 @@
                         </div>
                         <h3 class="about-card__title">Visão</h3>
                         <p class="about-card__description">
-                            Ser referência nacional em desenvolvimento de sites acessíveis e de alta performance,
-                            reconhecida por transformar a presença digital de empreendedores e empresas.
+                            Ser reconhecida em todo o Brasil como referência em sites de alto desempenho e baixo custo,
+                            contribuindo para a transformação digital de empreendedores e empresas em crescimento.
                         </p>
                     </div>
 
@@ -721,211 +759,255 @@
                         <h3 class="about-card__title">Valores</h3>
                         <ul class="about-card__list">
                             <li class="about-card__item">
-                                <i class="ri-check-line"></i> Comprometimento com o cliente
+                                <i class="ri-check-line"></i> Compromisso com o sucesso do cliente
                             </li>
                             <li class="about-card__item">
-                                <i class="ri-check-line"></i> Inovação constante
+                                <i class="ri-check-line"></i> Inovação com propósito
                             </li>
                             <li class="about-card__item">
-                                <i class="ri-check-line"></i> Qualidade acessível
+                                <i class="ri-check-line"></i> Qualidade acessível a todos
                             </li>
                             <li class="about-card__item">
-                                <i class="ri-check-line"></i> Parceria de verdade
+                                <i class="ri-check-line"></i> Parceria verdadeira e contínua
                             </li>
                             <li class="about-card__item">
-                                <i class="ri-check-line"></i> Ética e responsabilidade
+                                <i class="ri-check-line"></i> Ética, responsabilidade e transparência
                             </li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
+    </main>
 
-        <!--==================== DIFERENCIAIS ====================-->
-        <section class="about-differences section">
-            <div class="about-differences__container container">
-                <h2 class="section__title-center" style="color: #ffffff;">O que nos torna diferentes</h2>
 
-                <div class="about-differences__intro">
-                    <p class="about-differences__text">
-                        Na BGM Inovações, acreditamos que a verdadeira inovação vai além da tecnologia — ela reside na
-                        capacidade de entender profundamente as necessidades do cliente e oferecer soluções
-                        personalizadas que realmente agreguem valor. Nosso compromisso é ser mais do que um fornecedor:
-                        somos parceiros estratégicos no sucesso do seu negócio.
+    <!--==================== DIFERENCIAIS ====================-->
+    <section class="about-differences section">
+        <div class="about-differences__container container">
+            <h2 class="section__title-center" style="color: #ffffff;">O que nos torna diferentes</h2>
+
+            <div class="about-differences__intro">
+                <p class="about-differences__text">
+                    Na BGM Inovações, acreditamos que inovação de verdade nasce da escuta ativa e do foco total nas
+                    necessidades do cliente.
+                    Mais do que entregar tecnologia, oferecemos soluções personalizadas e estratégicas, construídas com
+                    você e para você.
+                    <br>
+                    Lealdade é uma rua de mão dupla: <strong>se estamos pedindo a sua, pode ter certeza de que receberá
+                        a nossa</strong>.
+                    <br>
+                    Aqui, você não contrata apenas um fornecedor — <strong>ganha um parceiro comprometido com o seu
+                        sucesso digital</strong>.
+                </p>
+
+
+            </div>
+
+            <div class="about-differences__content grid">
+                <!-- Engenharia própria -->
+                <div class="difference-card">
+                    <div class="difference-card__icon">
+                        <i class="ri-tools-line"></i>
+                    </div>
+                    <h3 class="difference-card__title">Engenharia própria, soluções sob medida</h3>
+                    <p class="difference-card__description">
+                        Com equipe interna e processos próprios, controlamos cada etapa do projeto — do diagnóstico à
+                        entrega.
+                        Isso garante agilidade, qualidade e soluções realmente personalizadas, sem depender de
+                        terceirizações.
                     </p>
                 </div>
 
-                <div class="about-differences__content grid">
-                    <!-- Engenharia própria -->
-                    <div class="difference-card">
-                        <div class="difference-card__icon">
-                            <i class="ri-tools-line"></i>
-                        </div>
-                        <h3 class="difference-card__title">Engenharia própria, soluções sob medida</h3>
-                        <p class="difference-card__description">
-                            Diferente de empresas que terceirizam processos, contamos com uma equipe interna altamente
-                            qualificada que acompanha cada etapa do projeto, desde o diagnóstico até a implementação.
-                            Isso nos permite desenvolver soluções sob medida, com maior agilidade e menor custo.
-                        </p>
+                <!-- Flexibilidade -->
+                <div class="difference-card">
+                    <div class="difference-card__icon">
+                        <i class="ri-dashboard-line"></i>
                     </div>
-
-                    <!-- Flexibilidade -->
-                    <div class="difference-card">
-                        <div class="difference-card__icon">
-                            <i class="ri-dashboard-line"></i>
-                        </div>
-                        <h3 class="difference-card__title">Flexibilidade e agilidade</h3>
-                        <p class="difference-card__description">
-                            Nossa estrutura enxuta e ágil nos permite adaptar rapidamente às mudanças do mercado e às
-                            demandas dos clientes. Somos como uma "farmácia de manipulação", criando soluções sob medida
-                            com a dosagem certa, sem depender de processos burocráticos.
-                        </p>
-                    </div>
-
-                    <!-- Sustentabilidade -->
-                    <div class="difference-card">
-                        <div class="difference-card__icon">
-                            <i class="ri-leaf-line"></i>
-                        </div>
-                        <h3 class="difference-card__title">Compromisso com a sustentabilidade</h3>
-                        <p class="difference-card__description">
-                            Acreditamos que inovação e responsabilidade ambiental caminham juntas. Nossas soluções
-                            contribuem para a redução de emissões atmosféricas, economia de combustível e aumento da
-                            segurança operacional, alinhando-se às melhores práticas de sustentabilidade.
-                        </p>
-                    </div>
-
-                    <!-- Ética -->
-                    <div class="difference-card">
-                        <div class="difference-card__icon">
-                            <i class="ri-shield-star-line"></i>
-                        </div>
-                        <h3 class="difference-card__title">Ética e transparência</h3>
-                        <p class="difference-card__description">
-                            Nosso Programa de Integridade e Ética estabelece padrões rigorosos de conduta, promovendo um
-                            ambiente corporativo transparente e ético. Isso inclui políticas claras, canal de ouvidoria
-                            e compromisso com a conformidade legal.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!--==================== NOSSO TIME ====================-->
-        <section class="about-team section" style="margin-top: 6rem;">
-            <div class="about-team__container container">
-                <div class="about-team__header">
-                    <h2 class="section__title-center" style="color: #ffffff;">Conheça Nosso Time</h2>
-                    <p class="about-team__slogan">Profissionais dedicados transformando sua visão em realidade digital
+                    <h3 class="difference-card__title">Flexibilidade e agilidade</h3>
+                    <p class="difference-card__description">
+                        Atuamos com estrutura enxuta e dinâmica, adaptando nossos serviços com rapidez às mudanças do
+                        mercado
+                        e às necessidades de cada cliente. Pensamos e agimos como uma "farmácia de manipulação digital":
+                        entregamos a dose certa, no tempo certo.
                     </p>
                 </div>
 
-                <div class="about-mvv__content grid">
-                    <!-- Card Bruno -->
-                    <div class="team-card">
-                        <div class="team-card__photo">
-                            <img src="assets/img/imagensFundo/Planta.jpg" alt="Bruno - Desenvolvedor Front-end"
-                                class="team-card__img">
-                            <!-- <div class="team-card__social">
-                                <a href="#" aria-label="LinkedIn do Bruno"><i class="ri-linkedin-fill"></i></a>
-                                <a href="#" aria-label="GitHub do Bruno"><i class="ri-github-fill"></i></a>
-                                <a href="#" aria-label="Portfólio do Bruno"><i class="ri-briefcase-fill"></i></a>
-                            </div> -->
-                        </div>
-                        <div class="team-card__info">
-                            <h3 class="team-card__name">Bruno Silva</h3>
-                            <p class="team-card__role">Desenvolvedor Front-end</p>
-                            <p class="team-card__description">
-                                Especialista em React e Vue.js com 5+ anos de experiência criando interfaces ricas e
-                                responsivas.
-                            </p>
-                            <div class="team-card__skills">
-                                <span class="team-skill">JavaScript</span>
-                                <span class="team-skill">React</span>
-                                <span class="team-skill">UI/UX</span>
-                            </div>
-                        </div>
+                <!-- Sustentabilidade -->
+                <div class="difference-card">
+                    <div class="difference-card__icon">
+                        <i class="ri-leaf-line"></i>
                     </div>
-
-                    <!-- Card Guilherme -->
-                    <div class="team-card">
-                        <div class="team-card__photo">
-                            <img src="assets/img/imagensFundo/Planta.jpg" alt="Guilherme - Desenvolvedor Back-end"
-                                class="team-card__img">
-                            <!-- <div class="team-card__social">
-                                <a href="#" aria-label="LinkedIn do Guilherme"><i class="ri-linkedin-fill"></i></a>
-                                <a href="#" aria-label="GitHub do Guilherme"><i class="ri-github-fill"></i></a>
-                                <a href="#" aria-label="Portfólio do Guilherme"><i class="ri-briefcase-fill"></i></a>
-                            </div> -->
-                        </div>
-                        <div class="team-card__info">
-                            <h3 class="team-card__name">Guilherme Costa</h3>
-                            <p class="team-card__role">Desenvolvedor Back-end</p>
-                            <p class="team-card__description">
-                                Expert em Node.js e arquitetura de sistemas, garantindo performance e segurança em todos
-                                os projetos.
-                            </p>
-                            <div class="team-card__skills">
-                                <span class="team-skill">Node.js</span>
-                                <span class="team-skill">Python</span>
-                                <span class="team-skill">SQL</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Card Mateus -->
-                    <div class="team-card">
-                        <div class="team-card__photo">
-                            <img src="assets/img/imagensFundo/Planta.jpg" alt="Mateus - Designer UI/UX" class="team-card__img">
-                            <!-- <div class="team-card__social">
-                                <a href="#" aria-label="LinkedIn do Mateus"><i class="ri-linkedin-fill"></i></a>
-                                <a href="#" aria-label="Behance do Mateus"><i class="ri-behance-fill"></i></a>
-                                <a href="#" aria-label="Portfólio do Mateus"><i class="ri-briefcase-fill"></i></a>
-                            </div> -->
-                        </div>
-                        <div class="team-card__info">
-                            <h3 class="team-card__name">Mateus Oliveira</h3>
-                            <p class="team-card__role">Designer UI/UX</p>
-                            <p class="team-card__description">
-                                Criativo e detalhista, transforma conceitos complexos em designs intuitivos e
-                                visualmente impressionantes.
-                            </p>
-                            <div class="team-card__skills">
-                                <span class="team-skill">Figma</span>
-                                <span class="team-skill">Photoshop</span>
-                                <span class="team-skill">UX Research</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!--==================== CTA ====================-->
-        <section class="about-cta section">
-            <div class="about-cta__container container">
-                <div class="about-cta__content">
-                    <h2 class="about-cta__title">Pronto para transformar sua presença digital?</h2>
-                    <p class="about-cta__description">
-                        Converse com nossa equipe e descubra como podemos ajudar seu negócio a crescer.
+                    <h3 class="difference-card__title">Inovação com responsabilidade</h3>
+                    <p class="difference-card__description">
+                        Sustentabilidade está no nosso DNA. Nossas soluções promovem economia de recursos, redução de
+                        impactos ambientais
+                        e segurança operacional, sempre alinhadas às boas práticas de responsabilidade socioambiental.
                     </p>
-                    <a href="../#plans" class="button button--flex">
-                        Conhecer planos <i class="ri-arrow-right-line button__icon"></i>
-                    </a>
+                </div>
+
+                <!-- Ética -->
+                <div class="difference-card">
+                    <div class="difference-card__icon">
+                        <i class="ri-shield-star-line"></i>
+                    </div>
+                    <h3 class="difference-card__title">Ética e transparência sempre</h3>
+                    <p class="difference-card__description">
+                        Nossa atuação é guiada por princípios éticos claros. Contamos com um Programa de Integridade que
+                        inclui
+                        conduta profissional, ouvidoria ativa e total conformidade legal — para que você confie em cada
+                        etapa do caminho.
+                    </p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
+
+
+    <!--==================== NOSSO TIME ====================-->
+    <section class="about-team section" style="margin-top: 6rem;">
+        <div class="about-team__container container">
+            <div class="about-team__header">
+                <h2 class="section__title-center" style="color: #ffffff;">Conheça Nosso Time</h2>
+                <p class="about-team__slogan">Profissionais dedicados transformando sua visão em realidade digital
+                </p>
+            </div>
+
+            <div class="about-mvv__content grid">
+                <!-- Card Bruno Carazatto -->
+                <div class="team-card">
+                    <div class="team-card__photo">
+                        <img src="assets/img/Time/Bruno.jpeg" alt="Bruno Carazatto - Marketing e Suporte ao Usuário"
+                            class="team-card__img">
+                        <!-- <div class="team-card__social">
+            <a href="#" aria-label="LinkedIn do Bruno"><i class="ri-linkedin-fill"></i></a>
+            <a href="#" aria-label="GitHub do Bruno"><i class="ri-github-fill"></i></a>
+            <a href="#" aria-label="Portfólio do Bruno"><i class="ri-briefcase-fill"></i></a>
+        </div> -->
+                    </div>
+                    <div class="team-card__info">
+                        <h3 class="team-card__name">Bruno Carazatto</h3>
+                        <p class="team-card__role">Marketing & Suporte ao Usuário</p>
+                        <p class="team-card__description">
+                            Olá! Me chamo Bruno, tenho 25 anos e atuo nas áreas de marketing digital e suporte técnico.
+                            Tenho experiência como arte-finalista e estou sempre buscando evolução constante por meio de
+                            novos aprendizados e desafios.
+                            Acredito no poder da comunicação clara e no design funcional para transformar ideias em
+                            resultados.
+                        </p>
+                        <div class="team-card__skills">
+                            <span class="team-skill">Design Gráfico</span>
+                            <span class="team-skill">Atendimento ao Cliente</span>
+                            <span class="team-skill">UI/UX</span>
+                            <span class="team-skill">Canva Pro</span>
+                            <span class="team-skill">Marketing Digital</span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Card Guilherme Baltazar -->
+                <div class="team-card">
+                    <div class="team-card__photo">
+                        <img src="assets/img/Time/Guilherme.jpg" alt="Guilherme Baltazar - Desenvolvedor Back-end"
+                            class="team-card__img">
+                        <!-- <div class="team-card__social">
+            <a href="#" aria-label="LinkedIn do Guilherme"><i class="ri-linkedin-fill"></i></a>
+            <a href="#" aria-label="GitHub do Guilherme"><i class="ri-github-fill"></i></a>
+            <a href="#" aria-label="Portfólio do Guilherme"><i class="ri-briefcase-fill"></i></a>
+        </div> -->
+                    </div>
+                    <div class="team-card__info">
+                        <h3 class="team-card__name">Guilherme Baltazar</h3>
+                        <p class="team-card__role">Desenvolvedor Back-end</p>
+                        <p class="team-card__description">
+                            Olá! Me chamo Guilherme, tenho 23 anos e sou apaixonado por tecnologia. Atuo como
+                            desenvolvedor Back-end, com sólida experiência em PHP, JavaScript e desenvolvimento de
+                            sistemas escaláveis. Tenho um forte foco em criar soluções eficientes e seguras, sempre
+                            buscando evoluir em cada projeto.
+                            Acredito que a combinação de habilidades técnicas e visão estratégica é a chave para
+                            entregar resultados excepcionais.
+                        </p>
+                        <div class="team-card__skills">
+                            <span class="team-skill">HTML</span>
+                            <span class="team-skill">CSS</span>
+                            <span class="team-skill">JavaScript</span>
+                            <span class="team-skill">Java</span>
+                            <span class="team-skill">SQL</span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Card Mateus Bispo -->
+                <div class="team-card">
+                    <div class="team-card__photo">
+                        <img src="assets/img/Time/Mateus.jpg" alt="Mateus Bispo - Marketing Digital e Redes Sociais"
+                            class="team-card__img">
+                        <!-- <div class="team-card__social">
+            <a href="#" aria-label="LinkedIn do Mateus"><i class="ri-linkedin-fill"></i></a>
+            <a href="#" aria-label="Behance do Mateus"><i class="ri-behance-fill"></i></a>
+            <a href="#" aria-label="Portfólio do Mateus"><i class="ri-briefcase-fill"></i></a>
+        </div> -->
+                    </div>
+                    <div class="team-card__info">
+                        <h3 class="team-card__name">Mateus Bispo</h3>
+                        <p class="team-card__role">Marketing Digital & Redes Sociais</p>
+                        <p class="team-card__description">
+                            Olá! Sou o Mateus, tenho 26 anos e sou responsável pela gestão de redes sociais, criação de
+                            artes no Canva,
+                            estratégias de marketing digital e configurações técnicas. Busco sempre unir criatividade e
+                            performance para gerar resultados reais.
+                            Meu foco está em transformar marcas em presenças digitais fortes, engajadas e memoráveis.
+                        </p>
+                        <div class="team-card__skills">
+                            <span class="team-skill">Canva Pro</span>
+                            <span class="team-skill">Gestão de Redes Sociais</span>
+                            <span class="team-skill">Marketing Digital</span>
+                            <span class="team-skill">Edição de Imagem</span>
+                            <span class="team-skill">Configurações Técnicas</span>
+                        </div>
+                    </div>
+                </div>
+
+    </section>
+
+    <!--==================== CTA ====================-->
+    <section class="about-cta section">
+        <div class="about-cta__container container">
+            <div class="about-cta__content">
+                <h2 class="about-cta__title">Pronto para dar o próximo passo na sua jornada digital?</h2>
+                <p class="about-cta__description">
+                    Fale com a nossa equipe e descubra como podemos transformar sua presença online com estratégias
+                    personalizadas e tecnologia de ponta.
+                </p>
+                <a href="../#plans" class="button button--flex">
+                    Conheça nossos planos <i class="ri-arrow-right-line button__icon"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
     </main>
     <!--==================== FOOTER ====================-->
-    <footer class="footer section">
+    <footer class="footer section" style="padding: 0rem 0px 1rem 0rem; margin-top: -4rem;">
         <p class="footer__copy" aria-label="Copyright">&#169; BGM - Inovações e Soluções 2024. <br> Todos os
             direitos reservados</p>
     </footer>
+    <!--=============== FLOATING BUTTONS ===============-->
+    <div class="floating-buttons">
+        <!-- Botão Instagram -->
+        <a href="https://www.instagram.com/bgm.inovacoes/?utm_source=ig_web_button_share_sheet"
+            class="floating-button instagram-button" aria-label="Nosso Instagram" target="_blank"
+            rel="noopener noreferrer">
+            <i class="ri-instagram-line"></i>
+        </a>
 
-    <!--=============== SCROLL UP ===============-->
-    <a href="#passo" class="scrollup glow-button" id="scroll-up" aria-label="Voltar ao topo">
-        <i class="ri-whatsapp-line scrollup__icon" aria-hidden="true"></i>
-    </a>
+        <!-- Botão WhatsApp -->
+        <a href="https://wa.me/seunumerodewhatsapp" class="floating-button whatsapp-button"
+            aria-label="Fale conosco no WhatsApp" target="_blank" rel="noopener noreferrer">
+            <i class="ri-whatsapp-line"></i>
+        </a>
+    </div>
     <!--=============== SCROLL REVEAL ===============-->
     <script src="assets/js/scrollreveal.min.js" defer></script>
     <!--=============== MAIN JS ===============-->

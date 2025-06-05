@@ -139,67 +139,67 @@ document.addEventListener("DOMContentLoaded", function () {
         {
           title: "Site de uma página",
           description:
-            "Landing page profissional com design moderno e 100% responsivo, otimizada para conversões e desempenho.",
+            "Landing page moderna, responsiva e otimizada para gerar conversões com velocidade e desempenho superiores.",
         },
         {
           title: "Imagens da empresa/negócio",
           description:
-            "Incluso tratamento profissional de até 5 imagens para destacar seus produtos/serviços com alta qualidade.",
+            "Incluso tratamento profissional de até 5 imagens para destacar seus produtos ou serviços com qualidade visual.",
         },
         {
           title: "Mapa de localização",
           description:
-            "Integração com Google Maps para clientes encontrarem seu estabelecimento com facilidade e verem rotas.",
+            "Integração com Google Maps para facilitar o acesso ao seu endereço e melhorar a experiência do cliente.",
         },
         {
           title: "Botão para WhatsApp",
           description:
-            "Botão de contato direto que aumenta em até 300% a taxa de conversão, com mensagem personalizável.",
+            "Contato direto e instantâneo via WhatsApp com mensagem personalizada, aumentando suas chances de conversão.",
         },
         {
           title: "SEO básico",
           description:
-            "Configurações essenciais de SEO para melhorar seu posicionamento orgânico nos mecanismos de busca.",
+            "Configurações iniciais de SEO para ajudar seu site a ser encontrado nos mecanismos de busca.",
         },
       ],
       whyChoose:
-        "A BGM oferece a solução perfeita para pequenos negócios que desejam presença online profissional sem investimento alto. Nossos sites são otimizados para performance, segurança e conversão, com suporte especializado para ajudá-lo a aproveitar ao máximo sua presença digital.",
+        "Ideal para pequenos negócios que buscam presença digital profissional com investimento acessível. A BGM entrega performance, segurança e suporte especializado para sua marca crescer na internet.",
     },
 
     profissional: {
       title: "Plano Profissional",
-      subtitle: "Para Negócios de Beleza e Desenvolvimento Pessoal",
+      subtitle: "Para Beleza e Desenvolvimento Pessoal",
       price: "R$ 239,90",
       icon: "assets/img/silver.png",
       features: [
         {
           title: "Instagram profissional",
           description:
-            "Configuração completa do perfil, incluindo bio otimizada, destaques categorizados e guia de conteúdo estratégico.",
+            "Perfil otimizado com bio estratégica, destaques organizados e conteúdo alinhado ao posicionamento da marca.",
         },
         {
           title: "Edição de 3 imagens e 1 vídeo",
           description:
-            "Tratamento profissional com ajuste de cores, cortes precisos, efeitos e padrão estético alinhado à sua marca.",
+            "Tratamento visual completo com ajustes técnicos e estética consistente com a identidade do seu negócio.",
         },
         {
           title: "Site de uma página",
           description:
-            "Landing page premium com design exclusivo, elementos de conversão otimizados e integração com redes sociais.",
+            "Landing page exclusiva com design premium, estrutura conversiva e integração com redes sociais.",
         },
         {
-          title: "Formulário de E-mail",
+          title: "Sistema com banco de dados",
           description:
-            "Sistema integrado para captação de leads com envio automático de confirmação e notificação em tempo real.",
+            "Infraestrutura robusta para gerenciamento de conteúdos, formulários, usuários.",
         },
         {
           title: "SEO intermediário",
           description:
-            "Otimização avançada com keywords estratégicas, meta tags e estruturação de conteúdo para melhor rankeamento.",
+            "Otimizações estratégicas com uso de palavras-chave, meta tags e estrutura de conteúdo otimizada.",
         },
       ],
       whyChoose:
-        "Especialmente desenvolvido para profissionais autônomos, nosso Plano Profissional combina presença digital completa com gestão estratégica. Oferecemos suporte contínuo, atualizações mensais e relatórios de performance para você acompanhar seu crescimento online.",
+        "Perfeito para autônomos que desejam visibilidade online com impacto. A BGM oferece suporte contínuo, melhorias mensais e análise de resultados para seu crescimento.",
     },
 
     empresarial: {
@@ -211,31 +211,31 @@ document.addEventListener("DOMContentLoaded", function () {
         {
           title: "Site completo (até 5 páginas)",
           description:
-            "Site institucional profissional com estrutura completa: Home, Sobre, Serviços, Portfólio e Contato.",
+            "Site institucional com páginas otimizadas para apresentar sua marca de forma profissional e eficiente.",
         },
         {
           title: "Sistema com banco de dados",
           description:
-            "Backend robusto para gestão de conteúdo, formulários, usuários e dados do negócio.",
+            "Infraestrutura robusta para gerenciamento de conteúdos, formulários, usuários.",
         },
         {
           title: "Otimização para anúncios",
           description:
-            "Estrutura preparada para campanhas de tráfego pago com pixels de conversão e landing pages otimizadas.",
+            "Preparação técnica completa para campanhas pagas com integração de pixels e rastreamento de conversões.",
         },
         {
           title: "Edição de 5 imagens e 3 vídeos",
           description:
-            "Pacote completo de tratamento de mídia com padrão profissional e identidade visual consistente.",
+            "Produção de mídia profissional com identidade visual coesa e alto padrão de qualidade.",
         },
         {
           title: "SEO avançado",
           description:
-            "Estratégia completa de SEO técnico e on-page com relatórios mensais de performance e rankeamento.",
+            "Técnicas avançadas de SEO on-page e técnico com relatórios mensais e acompanhamento de desempenho.",
         },
       ],
       whyChoose:
-        "Solução completa para empresas que demandam presença digital robusta. Na BGM, combinamos tecnologia avançada com estratégia digital para entregar resultados mensuráveis. Nossa equipe especializada garante performance, segurança e escalabilidade para seu negócio digital com suporte prioritário 24/7.",
+        "Feito para empresas que precisam de presença digital forte e confiável. A BGM entrega tecnologia, segurança e estratégias digitais sob medida com suporte premium 24/7.",
     },
 
     "rede-social-basico": {
@@ -247,31 +247,31 @@ document.addEventListener("DOMContentLoaded", function () {
         {
           title: "5 imagens + 2 vídeos mensais",
           description:
-            "Conteúdo visual profissional editado e otimizado para redes sociais, com padrão de qualidade premium.",
+            "Conteúdos visuais de alta qualidade, prontos para engajar e converter nas redes sociais.",
         },
         {
           title: "Instagram configurado",
           description:
-            "Perfil otimizado com bio estratégica, destaques organizados e guias de produtos/serviços.",
+            "Perfil profissional com bio estratégica, destaques organizados e guias de produtos.",
         },
         {
           title: "Integração de pagamentos",
           description:
-            "Sistema seguro para recebimentos online com Pix, cartões e boleto, sem taxa adicional.",
+            "Receba via Pix, cartão ou boleto com segurança e sem complicações.",
         },
         {
           title: "Gestão de estoque",
           description:
-            "Controle automatizado de inventário com alertas e sincronização entre plataformas.",
+            "Organização automatizada do inventário com alertas de reposição e sincronização multicanal.",
         },
         {
           title: "Ferramentas de marketing",
           description:
-            "Recursos básicos de promoção e análise de desempenho para impulsionar suas vendas.",
+            "Funcionalidades básicas para promover produtos e acompanhar resultados.",
         },
       ],
       whyChoose:
-        "Ideal para quem está começando no e-commerce, nosso Plano Básico oferece tudo que você precisa para vender online com profissionalismo. Na BGM, simplificamos o complexo mundo das vendas digitais, oferecendo suporte dedicado e soluções que realmente funcionam para pequenos empreendedores.",
+        "Para quem está iniciando no digital, o Plano Básico oferece estrutura, suporte e qualidade para você vender com confiança.",
     },
 
     "rede-social-intermediario": {
@@ -283,31 +283,31 @@ document.addEventListener("DOMContentLoaded", function () {
         {
           title: "10 imagens + 2 vídeos mensais",
           description:
-            "Pacote ampliado de conteúdo visual com edição profissional e direção criativa estratégica.",
+            "Conteúdo visual profissional com direção criativa para destacar sua marca e gerar engajamento.",
         },
         {
           title: "Instagram Premium",
           description:
-            "Perfil otimizado com linktree exclusivo, stories destacados e guias de produtos avançados.",
+            "Perfil estratégico com linktree, stories personalizados e guias completos de produtos/serviços.",
         },
         {
           title: "Checkout integrado",
           description:
-            "Processo de compra simplificado em 1 clique com múltiplas opções de pagamento e parcelamento.",
+            "Compra em 1 clique com opções diversas de pagamento e parcelamento fácil.",
         },
         {
           title: "Gestão de estoque avançada",
           description:
-            "Controle completo com variações de produtos, alertas automáticos e relatórios de giro.",
+            "Monitoramento detalhado com variações de produto e relatórios inteligentes.",
         },
         {
           title: "Marketing e SEO profissional",
           description:
-            "Estratégias avançadas de posicionamento orgânico e ferramentas de automação de promoções.",
+            "Automação de campanhas, estratégias de conteúdo e melhorias contínuas de posicionamento.",
         },
       ],
       whyChoose:
-        "Para negócios em fase de crescimento, nosso Plano Intermediário oferece ferramentas poderosas para escalar suas vendas. Na BGM, entendemos os desafios do e-commerce e oferecemos soluções práticas com suporte especializado para você focar no que realmente importa: crescer seu negócio.",
+        "Se você já vende online e quer crescer com estratégia, este plano é o próximo passo. A BGM oferece suporte técnico e criativo para escalar suas vendas com eficiência.",
     },
 
     "rede-social-premium": {
@@ -319,31 +319,31 @@ document.addEventListener("DOMContentLoaded", function () {
         {
           title: "10 imagens + 4 vídeos mensais",
           description:
-            "Produção de conteúdo profissional completo com direção criativa e identidade visual premium.",
+            "Produção de conteúdo visual premium com narrativa de marca e foco em conversão.",
         },
         {
           title: "Instagram Vendas",
           description:
-            "Configuração completa da loja no Instagram com catálogo de produtos e integração direta ao checkout.",
+            "Loja integrada ao Instagram com catálogo de produtos e checkout direto na plataforma.",
         },
         {
           title: "Sistema de pagamento completo",
           description:
-            "Todas as formas de pagamento com checkout transparente, antifraude e gestão de chargeback.",
+            "Checkout transparente com antifraude, diversas opções de pagamento e controle de chargebacks.",
         },
         {
           title: "Gestão de estoque inteligente",
           description:
-            "Sistema preditivo com integração em marketplaces e alertas de reposição automatizados.",
+            "Tecnologia preditiva com integração a marketplaces e relatórios de performance.",
         },
         {
           title: "Marketing e SEO avançado",
           description:
-            "Estratégias completas de tráfego orgânico e pago com relatórios detalhados de ROI.",
+            "Campanhas de tráfego e estratégias de conteúdo com acompanhamento de ROI e melhorias contínuas.",
         },
       ],
       whyChoose:
-        "Solução completa para lojas online estabelecidas que buscam excelência operacional. A BGM oferece tecnologia de ponta combinada com estratégia digital especializada para maximizar suas vendas. Nosso time de especialistas trabalha lado a lado com você para garantir os melhores resultados, com análises periódicas e ajustes estratégicos contínuos.",
+        "Para marcas consolidadas que desejam excelência em vendas online, a BGM entrega soluções completas com análise de dados, suporte estratégico e resultados reais.",
     },
   };
 
@@ -575,3 +575,30 @@ document.addEventListener("keydown", function (event) {
     });
   }
 });
+
+//**
+// ! Phone mask!
+//  */
+
+document.addEventListener('DOMContentLoaded', function() {
+        const phoneInput = document.getElementById('phone');
+        
+        phoneInput.addEventListener('input', function(e) {
+            // Remove todos os caracteres que não são números
+            let value = e.target.value.replace(/\D/g, '');
+            
+            // Aplica a máscara de telefone
+            if (value.length > 0) {
+                // Telefone fixo (10 dígitos) ou celular (11 dígitos)
+                if (value.length <= 10) {
+                    // Formato: (00) 0000-0000
+                    value = value.replace(/^(\d{2})(\d{4})(\d{4})$/, '($1) $2-$3');
+                } else {
+                    // Formato: (00) 00000-0000
+                    value = value.replace(/^(\d{2})(\d{5})(\d{4})$/, '($1) $2-$3');
+                }
+            }
+            
+            e.target.value = value;
+        });
+    });
