@@ -122,6 +122,12 @@ sr.reveal(`.feature-card, .about-differences__text`, { interval: 100 });
 sr.reveal(`.about-cta__content, .about-differences__content`, {
   origin: "bottom",
 });
+// Adicione isso ao seu arquivo JS existente
+sr.reveal(`.partners__card`, { 
+    interval: 150,
+    origin: 'bottom',
+    distance: '50px'
+});
 
 //**
 // ! Script de Planos dados sobre eles!
