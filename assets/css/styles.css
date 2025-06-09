@@ -1930,292 +1930,369 @@ select {
 }
 
 .footer {
-    background-color: var(--container-color); /* Ou um tom escuro para contraste */
-    padding: 2rem 1rem;
-    text-align: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: var(
+    --container-color
+  ); /* Ou um tom escuro para contraste */
+  padding: 2rem 1rem;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .footer__content {
-    max-width: 960px;
-    margin: 0 auto;
+  max-width: 960px;
+  margin: 0 auto;
 }
 
 .footer__text {
-    font-size: 0.95rem;
-    color: var(--text-color-light);
-    margin-bottom: 0.5rem;
-    line-height: 1.6;
+  font-size: 0.95rem;
+  color: var(--text-color-light);
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
 }
 
 .developer-credit {
-    font-size: 0.85rem;
-    color: var(--text-color-light);
+  font-size: 0.85rem;
+  color: var(--text-color-light);
 }
 
 .developer-credit a {
-    color: var(--first-color);
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
+  color: var(--first-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
 .developer-credit a:hover {
-    color: var(--first-color-alt);
-    text-decoration: underline;
+  color: var(--first-color-alt);
+  text-decoration: underline;
 }
 
 .mobile-break {
-    display: none;
+  display: none;
 }
 
 /* Responsivo */
 @media screen and (max-width: 768px) {
-    .footer {
-        padding: 1.5rem 1rem;
-    }
+  .footer {
+    padding: 1.5rem 1rem;
+  }
 
-    .footer__text {
-        font-size: 0.9rem;
-    }
+  .footer__text {
+    font-size: 0.9rem;
+  }
 
-    .developer-credit {
-        font-size: 0.8rem;
-    }
+  .developer-credit {
+    font-size: 0.8rem;
+  }
 
-    .mobile-break {
-        display: inline;
-    }
+  .mobile-break {
+    display: inline;
+  }
 }
-
 
 /*=============== PARTNERS BUTTON ===============*/
 .parteners__button-container {
-    display: flex;
-    justify-content: center;
-    margin-top: var(--mb-2-5);
+  display: flex;
+  justify-content: center;
+  margin-top: var(--mb-2-5);
 }
 
 .button {
-    display: inline-flex;
-    align-items: center;
-    background-color: var(--first-color);
-    padding: 1rem 1.5rem;
-    border-radius: 0.5rem;
-    font-weight: var(--font-medium);
-    transition: 0.3s;
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--first-color);
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: var(--font-medium);
+  transition: 0.3s;
 }
 
 .button:hover {
-    background-color: var(--first-color);
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  background-color: var(--first-color);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .button__icon {
-    margin-left: var(--mb-0-5);
-    transition: 0.3s;
+  margin-left: var(--mb-0-5);
+  transition: 0.3s;
 }
 
 .button:hover .button__icon {
-    transform: translateX(5px);
+  transform: translateX(5px);
 }
 
 /*=============== PARTNERS PAGE ===============*/
 .partners-page {
-    padding: 7rem 0 3rem;
+  padding: 7rem 0 3rem;
 }
 
 .partners__description {
-    text-align: center;
-    margin-bottom: var(--mb-2-5);
-    color: var(--text-color-light);
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
+  text-align: center;
+  margin-bottom: var(--mb-2-5);
+  color: var(--text-color-light);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .partners__grid {
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
 }
 
 .partners__card {
-    background: var(--container-color);
-    border-radius: 1rem;
-    overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background: var(--container-color);
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .partners__card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
 
 .partners__img-container {
-    overflow: hidden;
-    height: 200px;
-    position: relative;
+  overflow: hidden;
+  height: 200px;
+  position: relative;
 }
 
 .partners__img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
 }
 
 .partners__card:hover .partners__img {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .partners__data {
-    padding: 1.5rem;
+  padding: 1.5rem;
 }
 
 .partners__name {
-    font-size: var(--h3-font-size);
-    margin-bottom: var(--mb-0-75);
-    color: var(--title-color);
+  font-size: var(--h3-font-size);
+  margin-bottom: var(--mb-0-75);
+  color: var(--title-color);
 }
 
 .partners__description-card {
-    font-size: var(--small-font-size);
-    margin-bottom: var(--mb-1-5);
-    color: var(--text-color-light);
+  font-size: var(--small-font-size);
+  margin-bottom: var(--mb-1-5);
+  color: var(--text-color-light);
 }
 
 .partners__button-container {
-    text-align: right;
+  text-align: right;
 }
 
 .button--small {
-    padding: 0.75rem 1.25rem;
-    font-size: var(--small-font-size);
+  padding: 0.75rem 1.25rem;
+  font-size: var(--small-font-size);
 }
 
 /* Ícone de seta para canto */
 .ri-arrow-right-up-line {
-    font-size: 1rem;
+  font-size: 1rem;
 }
 
 /* Responsividade */
 @media screen and (max-width: 768px) {
-    .partners__grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .partners-page {
-        padding: 5rem 0 2rem;
-    }
-}
+  .partners__grid {
+    grid-template-columns: 1fr;
+  }
 
+  .partners-page {
+    padding: 5rem 0 2rem;
+  }
+}
 
 /* Estilos específicos para o card Big Pizza */
 .partners__logo-overlay {
-    position: absolute;
-    bottom: -20px;
-    right: 20px;
-    width: 80px;
-    height: 80px;
-    background: var(--container-color);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    z-index: 2;
-    border: 4px solid var(--body-color);
+  position: absolute;
+  bottom: -20px;
+  right: 20px;
+  width: 80px;
+  height: 80px;
+  background: var(--container-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 2;
+  border: 4px solid var(--body-color);
 }
 
 .partners__logo {
-    width: 60px;
-    height: 60px;
-    object-fit: contain;
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
 }
 
 .partners__header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: var(--mb-0-75);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--mb-0-75);
 }
 
 .partners__rating {
-    display: flex;
-    align-items: center;
-    background-color: var(--first-color-lighten);
-    padding: 0.25rem 0.5rem;
-    border-radius: 1rem;
-    color: var(--first-color);
-    font-size: var(--small-font-size);
-    font-weight: var(--font-semi-bold);
+  display: flex;
+  align-items: center;
+  background-color: var(--first-color-lighten);
+  padding: 0.25rem 0.5rem;
+  border-radius: 1rem;
+  color: var(--first-color);
+  font-size: var(--small-font-size);
+  font-weight: var(--font-semi-bold);
 }
 
 .partners__rating i {
-    color: #FFD700;
-    margin-right: 0.25rem;
+  color: #ffd700;
+  margin-right: 0.25rem;
 }
 
 .partners__features {
-    display: flex;
-    gap: 1rem;
-    margin: var(--mb-1) 0;
+  display: flex;
+  gap: 1rem;
+  margin: var(--mb-1) 0;
 }
 
 .partners__feature {
-    display: flex;
-    align-items: center;
-    font-size: var(--smaller-font-size);
-    color: var(--text-color-light);
+  display: flex;
+  align-items: center;
+  font-size: var(--smaller-font-size);
+  color: var(--text-color-light);
 }
 
 .partners__feature i {
-    margin-right: 0.25rem;
-    color: var(--first-color);
+  margin-right: 0.25rem;
+  color: var(--first-color);
 }
 
 /* Estilos específicos para o card Calhas Taquaral */
 .partners__tag {
-    position: absolute;
-    top: 1rem;
-    left: 1rem;
-    background-color: var(--first-color);;
-    color: white;
-    padding: 0.25rem 0.75rem;
-    border-radius: 1rem;
-    font-size: var(--smaller-font-size);
-    display: flex;
-    align-items: center;
-    gap: 0.25rem;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background-color: var(--first-color);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: var(--smaller-font-size);
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
 }
 
 .partners__contacts {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-    margin: var(--mb-1) 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: var(--mb-1) 0;
 }
 
 .partners__contact-link {
-    display: flex;
-    align-items: center;
-    gap: 0.25rem;
-    font-size: var(--small-font-size);
-    color: var(--first-color);
-    transition: color 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: var(--small-font-size);
+  color: var(--first-color);
+  transition: color 0.3s;
 }
 
 .partners__contact-link:hover {
-    color: var(--first-color-alt);
+  color: var(--first-color-alt);
 }
 
 .partners__contact-link i {
-    font-size: 1rem;
+  font-size: 1rem;
 }
 
 /* Cores específicas para Calhas Taquaral */
 .partners__card[style*="Calhas"] .partners__feature i {
-    color: var(--first-color);
+  color: var(--first-color);
+}
+
+/* Estilos específicos para L'Barte em Fios */
+
+.partners__craft-detail {
+  width: 120%;
+  opacity: 0.8;
+}
+
+.partners__social-links {
+  display: flex;
+  gap: 1rem;
+  margin: var(--mb-1) 0;
+}
+
+.partners__social-link {
+  color: var(--text-color-light);
+  font-size: 1.25rem;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.partners__social-link:hover {
+  color: #ff6b6b;
+  transform: translateY(-3px);
+}
+
+/* Efeito especial para o card de artesanato */
+.partners__card:hover .partners__craft-overlay {
+  height: 40px;
+  transition: height 0.3s ease;
+}
+
+/* Estilos específicos para o card da dentista */
+.partners__professional-badge {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #3b82f6;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: var(--tiny-font-size);
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-weight: var(--font-semi-bold);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.partners__contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: var(--mb-1) 0;
+}
+
+.partners__contact-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--small-font-size);
+  color: var(--text-color);
+  transition: color 0.3s;
+}
+
+.partners__contact-link:hover {
+  color: #3b82f6;
+}
+
+.partners__contact-link i {
+  font-size: 1rem;
+  color: #3b82f6;
+}
+
+/* Efeito de destaque para a área de saúde */
+.partners__tag[style*="background-color: #3B82F6"] {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
