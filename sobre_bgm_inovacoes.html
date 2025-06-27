@@ -28,7 +28,7 @@
     <meta property="og:image" content="https://bgminovacoes.com.br/assets/img/linklogo.jpg">
     <meta property="og:image:width" content="1080">
     <meta property="og:image:height" content="1080">
-    
+
     <!-- Favicon -->
     <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" sizes="57x57" href="assets/img/icons_mobile/apple-icon-57x57.png">
@@ -51,8 +51,12 @@
 
 
     <!-- Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css">
+    <!-- Remix Icon (versão mais recente) -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- Unicons (versão mais recente) -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+
 
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/styles.css?v=1.0.0">
@@ -980,19 +984,36 @@
     </main>
     <!--==================== FOOTER ====================-->
     <footer class="footer section">
-        <div class="footer__content">
-            <p class="footer__text">
-                &copy; <span class="year">2024</span>
-                BGM - Inovações e Soluções. <br class="mobile-break">
-                Todos os direitos reservados.
-            </p>
-            <p class="developer-credit">
-                Desenvolvido por
-                <a href="https://www.instagram.com/yguilhermeb/" target="_blank" rel="noopener noreferrer"
-                    aria-label="Instagram do desenvolvedor Guilherme Baltazar">
-                    Guilherme Baltazar
-                </a>
-            </p>
+        <div class="footer__container container grid">
+            <div class="footer__content">
+                <div class="footer__links">
+                    <a href="privacy.html" class="footer__link">
+                        <i class="ri-shield-keyhole-line"></i> Política de Privacidade
+                    </a>
+                    <a href="#" id="manageDataBtn" class="footer__link">
+                        <i class="ri-database-2-line"></i> Gerenciar Meus Dados
+                    </a>
+                    <a href="terms.html" class="footer__link">
+                        <i class="ri-file-text-line"></i> Termos de Uso
+                    </a>
+                </div>
+
+                <div class="footer__info">
+                    <p class="footer__text">
+                        &copy; <span class="year">2024</span>
+                        BGM - Inovações e Soluções.<br class="mobile-break">
+                        Todos os direitos reservados.
+                    </p>
+
+                    <p class="developer-credit">
+                        Desenvolvido por
+                        <a href="https://www.instagram.com/yguilhermeb/" target="_blank" rel="noopener noreferrer"
+                            aria-label="Instagram do desenvolvedor Guilherme Baltazar" class="footer__link">
+                            <i class="ri-instagram-line"></i> Guilherme Baltazar
+                        </a>
+                    </p>
+                </div>
+            </div>
         </div>
     </footer>
     <!--=============== FLOATING BUTTONS ===============-->
@@ -1004,7 +1025,7 @@
             <i class="ri-instagram-line"></i>
         </a>
 
-         <!-- Botão WhatsApp -->
+        <!-- Botão WhatsApp -->
         <a style="display: none;" href="https://wa.me/seunumerodewhatsapp" class="floating-button whatsapp-button"
             aria-label="Fale conosco no WhatsApp" target="_blank" rel="noopener noreferrer">
             <i class="ri-whatsapp-line"></i>

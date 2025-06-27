@@ -52,8 +52,11 @@
 
 
     <!-- Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css">
+    <!-- Remix Icon (versão mais recente) -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- Unicons (versão mais recente) -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
 
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/styles.css?v=1.0.0">
@@ -140,7 +143,8 @@
                             target="_blank" class="home__social-link" aria-label="Instagram">
                             <i class="ri-instagram-line" aria-hidden="true"></i>
                         </a>
-                        <a href="#plans" style="display: none;" target="_blank" class="home__social-link" aria-label="whatsapp">
+                        <a href="#plans" style="display: none;" target="_blank" class="home__social-link"
+                            aria-label="whatsapp">
                             <i class="ri-whatsapp-line" aria-hidden="true"></i>
                         </a>
                     </div>
@@ -682,34 +686,176 @@
             </div>
         </div>
 
-        <!-- Modal Content -->
-        <div id="proposalModal" class="modal">
+        <!-- Modal de Proposta -->
+        <div id="proposalModal" class="modal" aria-hidden="true">
             <div class="modal-content" role="document">
-                <span class="close" aria-label="Close modal">&times;</span>
-                <h2 id="modalTitle">Informações</h2>
-                <p style="padding: 2rem 0;">Por favor, preencha este formulário para que possamos entrar em contato com
-                    você!</p>
+                <span class="close" aria-label="Fechar modal">&times;</span>
+                <div class="modal__header">
+                    <h2 id="modalTitle">Informações</h2>
+                    <p class="modal__subtitle">Preencha este formulário para que possamos entrar em contato com você!
+                    </p>
+                </div>
 
-                <form id="modalForm" action="processar_formulario.php" method="POST">
+                <form id="modalForm" action="PHP/processar_formulario.php" method="POST">
                     <input type="hidden" id="planType" name="planType" value="">
 
-                    <label for="name">Nome Completo:</label>
-                    <input type="text" id="name" name="user_name" required placeholder="Digite seu nome completo"><br>
+                    <div class="form__group">
+                        <label for="name">Nome Completo:</label>
+                        <input type="text" id="name" name="user_name" required placeholder="Digite seu nome completo">
+                    </div>
 
-                    <label for="email">Melhor E-mail:</label>
-                    <input type="email" id="email" name="user_email" class="email-input" required
-                        placeholder="Digite seu e-mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"><br>
+                    <div class="form__group">
+                        <label for="email">Melhor E-mail:</label>
+                        <input type="email" id="email" name="user_email" class="email-input" required
+                            placeholder="Digite seu e-mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                    </div>
 
-                    <label for="phone">Telefone para Contato:</label>
-                    <input type="tel" id="phone" name="user_tel" class="phone-input" required
-                        placeholder="(00) 00000-0000" maxlength="15"><br>
+                    <div class="form__group">
+                        <label for="phone">Telefone para Contato:</label>
+                        <input type="tel" id="phone" name="user_tel" class="phone-input" required
+                            placeholder="(00) 00000-0000" maxlength="15">
+                    </div>
 
-                    <label for="idea">Descreva sua ideia:</label>
-                    <textarea id="idea" name="user_idea" rows="4" required
-                        placeholder="Conte um pouco sobre sua ideia"></textarea><br>
+                    <div class="form__group">
+                        <label for="idea">Descreva sua ideia:</label>
+                        <textarea id="idea" name="user_idea" rows="4" required
+                            placeholder="Conte um pouco sobre sua ideia"></textarea>
+                    </div>
 
-                    <button type="submit" class="card__button">Enviar</button>
+                    <div class="consent-group">
+                        <label class="modern-checkbox">
+                            <input type="checkbox" id="privacy-consent" name="privacy_consent" required>
+                            <span class="checkmark"></span>
+                            <span class="consent-text">Li e concordo com a <a href="privacy.html" target="_blank"
+                                    class="consent-link">Política de Privacidade</a></span>
+                        </label>
+                        <div class="consent-hint">
+                            <i class="ri-information-line"></i> Seus dados estão protegidos conforme a LGPD
+                        </div>
+                    </div>
+                    <button type="submit" class="modal__button">
+                        <i class="ri-send-plane-fill"></i> Enviar
+                    </button>
                 </form>
+            </div>
+        </div>
+
+        <!-- Modal de Gerenciamento de Dados -->
+        <div id="dataManagementModal" class="modal" aria-hidden="true">
+            <div class="modal-content" role="document">
+                <span class="close" aria-label="Fechar modal">&times;</span>
+                <div class="modal__header">
+                    <h2>Gerenciar Meus Dados</h2>
+                    <p class="modal__subtitle">Exercite seus direitos conforme a LGPD</p>
+                </div>
+
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="request">Solicitação</button>
+                    <button class="tab-btn" data-tab="info">Informações</button>
+                </div>
+
+                <div id="request-tab" class="tab-content active">
+                    <form id="modalForm" action="PHP/processar_dados.php" method="POST">
+                        <div class="form__group">
+                            <label for="request-name">Nome Completo</label>
+                            <input type="text" id="request-name" name="name" required>
+                        </div>
+
+                        <div class="form__group">
+                            <label for="request-email">E-mail</label>
+                            <input type="email" id="request-email" name="email" required>
+                        </div>
+
+                        <div class="form__group">
+                            <label for="request-type">Tipo de Solicitação</label>
+                            <select id="request-type" name="request_type" required>
+                                <option value="">Selecione...</option>
+                                <option value="access">Acessar meus dados</option>
+                                <option value="correction">Corrigir meus dados</option>
+                                <option value="deletion">Excluir meus dados</option>
+                                <option value="portability">Solicitar portabilidade</option>
+                                <option value="revoke">Revogar consentimento</option>
+                                <option value="other">Outro</option>
+                            </select>
+                        </div>
+
+                        <div class="form__group" id="details-group" style="display: none;">
+                            <label for="request-details">Detalhes da Solicitação</label>
+                            <textarea id="request-details" name="details" rows="3"></textarea>
+                        </div>
+
+                        <button type="submit" class="modal__button">
+                            <i class="ri-send-plane-fill"></i> Enviar Solicitação
+                        </button>
+                    </form>
+                </div>
+
+                <div id="info-tab" class="tab-content">
+                    <div class="info-content">
+                        <h3>Seus direitos conforme a LGPD</h3>
+                        <ul class="modal__features">
+                            <li>
+                                <div class="feature-title">
+                                    <i class="ri-eye-line"></i> Acesso
+                                </div>
+                                <p class="feature-description">Solicitar uma cópia dos dados pessoais que temos sobre
+                                    você.</p>
+                            </li>
+                            <li>
+                                <div class="feature-title">
+                                    <i class="ri-edit-line"></i> Correção
+                                </div>
+                                <p class="feature-description">Solicitar a atualização de dados incompletos, inexatos ou
+                                    desatualizados.</p>
+                            </li>
+                            <li>
+                                <div class="feature-title">
+                                    <i class="ri-delete-bin-line"></i> Exclusão
+                                </div>
+                                <p class="feature-description">Solicitar a eliminação de dados tratados com seu
+                                    consentimento.</p>
+                            </li>
+                            <li>
+                                <div class="feature-title">
+                                    <i class="ri-share-line"></i> Portabilidade
+                                </div>
+                                <p class="feature-description">Solicitar a transferência de dados a outro fornecedor de
+                                    serviço.</p>
+                            </li>
+                            <li>
+                                <div class="feature-title">
+                                    <i class="ri-close-circle-line"></i> Revogação
+                                </div>
+                                <p class="feature-description">Retirar seu consentimento quando este for a base legal
+                                    para tratamento.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal de Confirmação -->
+        <div id="confirmationModal" class="modal" aria-hidden="true">
+            <div class="modal-content modal-status">
+                <div class="status-icon success">
+                    <i class="ri-checkbox-circle-fill"></i>
+                </div>
+                <h2>Solicitação Enviada!</h2>
+                <p>Sua solicitação foi registrada com sucesso. Entraremos em contato em até 5 dias úteis.</p>
+                <button class="modal__button status-close">Fechar</button>
+            </div>
+        </div>
+
+        <!-- Modal de Erro -->
+        <div id="errorModal" class="modal" aria-hidden="true">
+            <div class="modal-content modal-status">
+                <div class="status-icon error">
+                    <i class="ri-close-circle-fill"></i>
+                </div>
+                <h2>Erro no Envio</h2>
+                <p id="errorMessage">Ocorreu um erro ao processar sua solicitação. Por favor, tente novamente.</p>
+                <button class="modal__button status-close">Fechar</button>
             </div>
         </div>
 
@@ -717,19 +863,36 @@
     </main>
     <!--==================== FOOTER ====================-->
     <footer class="footer section">
-        <div class="footer__content">
-            <p class="footer__text">
-                &copy; <span class="year">2024</span>
-                BGM - Inovações e Soluções. <br class="mobile-break">
-                Todos os direitos reservados.
-            </p>
-            <p class="developer-credit">
-                Desenvolvido por
-                <a href="https://www.instagram.com/yguilhermeb/" target="_blank" rel="noopener noreferrer"
-                    aria-label="Instagram do desenvolvedor Guilherme Baltazar">
-                    Guilherme Baltazar
-                </a>
-            </p>
+        <div class="footer__container container grid">
+            <div class="footer__content">
+                <div class="footer__links">
+                    <a href="privacy.html" class="footer__link">
+                        <i class="ri-shield-keyhole-line"></i> Política de Privacidade
+                    </a>
+                    <a href="#" id="manageDataBtn" class="footer__link">
+                        <i class="ri-database-2-line"></i> Gerenciar Meus Dados
+                    </a>
+                    <a href="terms.html" class="footer__link">
+                        <i class="ri-file-text-line"></i> Termos de Uso
+                    </a>
+                </div>
+
+                <div class="footer__info">
+                    <p class="footer__text">
+                        &copy; <span class="year">2024</span>
+                        BGM - Inovações e Soluções.<br class="mobile-break">
+                        Todos os direitos reservados.
+                    </p>
+
+                    <p class="developer-credit">
+                        Desenvolvido por
+                        <a href="https://www.instagram.com/yguilhermeb/" target="_blank" rel="noopener noreferrer"
+                            aria-label="Instagram do desenvolvedor Guilherme Baltazar" class="footer__link">
+                            <i class="ri-instagram-line"></i> Guilherme Baltazar
+                        </a>
+                    </p>
+                </div>
+            </div>
         </div>
     </footer>
 
@@ -753,7 +916,8 @@
     <!--=============== SCROLL REVEAL ===============-->
     <script src="assets/js/scrollreveal.min.js"></script>
     <!--=============== MAIN JS ===============-->
-    <script src="assets/js/main.js?v=1.0.0"></script>
+    <script src="assets/js/main.js?v=1.0.0" defer></script>
+
 
 </body>
 

@@ -51,8 +51,12 @@
 
 
     <!-- Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css">
+    <!-- Remix Icon (versão mais recente) -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- Unicons (versão mais recente) -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+
 
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/styles.css?v=1.0.0">
@@ -330,19 +334,36 @@
 
         <!--==================== FOOTER ====================-->
         <footer class="footer section">
-            <div class="footer__content">
-                <p class="footer__text">
-                    &copy; <span class="year">2024</span>
-                    BGM - Inovações e Soluções. <br class="mobile-break">
-                    Todos os direitos reservados.
-                </p>
-                <p class="developer-credit">
-                    Desenvolvido por
-                    <a href="https://www.instagram.com/yguilhermeb/" target="_blank" rel="noopener noreferrer"
-                        aria-label="Instagram do desenvolvedor Guilherme Baltazar">
-                        Guilherme Baltazar
-                    </a>
-                </p>
+            <div class="footer__container container grid">
+                <div class="footer__content">
+                    <div class="footer__links">
+                        <a href="privacy.html" class="footer__link">
+                            <i class="ri-shield-keyhole-line"></i> Política de Privacidade
+                        </a>
+                        <a href="#" id="manageDataBtn" class="footer__link">
+                            <i class="ri-database-2-line"></i> Gerenciar Meus Dados
+                        </a>
+                        <a href="terms.html" class="footer__link">
+                            <i class="ri-file-text-line"></i> Termos de Uso
+                        </a>
+                    </div>
+
+                    <div class="footer__info">
+                        <p class="footer__text">
+                            &copy; <span class="year">2024</span>
+                            BGM - Inovações e Soluções.<br class="mobile-break">
+                            Todos os direitos reservados.
+                        </p>
+
+                        <p class="developer-credit">
+                            Desenvolvido por
+                            <a href="https://www.instagram.com/yguilhermeb/" target="_blank" rel="noopener noreferrer"
+                                aria-label="Instagram do desenvolvedor Guilherme Baltazar" class="footer__link">
+                                <i class="ri-instagram-line"></i> Guilherme Baltazar
+                            </a>
+                        </p>
+                    </div>
+                </div>
             </div>
         </footer>
 
@@ -367,7 +388,7 @@
     <!--=============== SCROLL REVEAL ===============-->
     <script src="assets/js/scrollreveal.min.js"></script>
     <!--=============== MAIN JS ===============-->
-    <script src="assets/js/main.js?v=1.0.0"></script>
+    <script src="assets/js/main.js?v=1.0.0" defer></script>
 
     <script>
         document.querySelector(".year").textContent = new Date().getFullYear();

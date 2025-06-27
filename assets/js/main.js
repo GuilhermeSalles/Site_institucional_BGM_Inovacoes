@@ -68,66 +68,151 @@ const toggleItem = (item) => {
 };
 
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
-const sections = document.querySelectorAll("section[id]");
-
 function scrollActive() {
-  const scrollY = window.pageYOffset;
+  try {
+    const scrollY = window.pageYOffset;
+    const sections = document.querySelectorAll("section[id]");
+    const navMenu = document.querySelector(".nav__menu");
 
-  sections.forEach((current) => {
-    const sectionHeight = current.offsetHeight,
-      sectionTop = current.offsetTop - 58,
-      sectionId = current.getAttribute("id");
+    if (!navMenu) return; // Sai se o menu de navegação não existir
 
-    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-      document
-        .querySelector(".nav__menu a[href*=" + sectionId + "]")
-        .classList.add("active-link");
-    } else {
-      document
-        .querySelector(".nav__menu a[href*=" + sectionId + "]")
-        .classList.remove("active-link");
-    }
-  });
+    sections.forEach((current) => {
+      const sectionHeight = current.offsetHeight;
+      const sectionTop = current.offsetTop - 58;
+      const sectionId = current.getAttribute("id");
+      const navLink = navMenu.querySelector(`a[href*="${sectionId}"]`);
+
+      if (navLink) {
+        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+          navLink.classList.add("active-link");
+        } else {
+          navLink.classList.remove("active-link");
+        }
+      }
+    });
+  } catch (error) {
+    console.error("Error in scrollActive:", error);
+  }
 }
-window.addEventListener("scroll", scrollActive);
 
 /*=============== SHOW SCROLL UP ===============*/
 function scrollUp() {
-  const scrollUp = document.getElementById("scroll-up");
-  // When the scroll is higher than 400 viewport height, add the show-scroll class to the a tag with the scroll-top class
-  if (this.scrollY >= 400) scrollUp.classList.add("show-scroll");
-  else scrollUp.classList.remove("show-scroll");
+  try {
+    const scrollUp = document.getElementById("scroll-up");
+    if (!scrollUp) return; // Sai se o elemento não existir
+
+    // Quando o scroll for maior que 400vh, adiciona a classe show-scroll
+    if (window.scrollY >= 400) {
+      scrollUp.classList.add("show-scroll");
+    } else {
+      scrollUp.classList.remove("show-scroll");
+    }
+  } catch (error) {
+    console.error("Error in scrollUp:", error);
+  }
 }
-window.addEventListener("scroll", scrollUp);
 
 /*=============== SCROLL REVEAL ANIMATION ===============*/
-const sr = ScrollReveal({
-  origin: "top",
-  distance: "60px",
-  duration: 1000,
-  delay: 100,
-  // reset: true
+function initScrollReveal() {
+  try {
+    if (typeof ScrollReveal !== "undefined") {
+      const sr = ScrollReveal({
+        origin: "top",
+        distance: "60px",
+        duration: 1000,
+        delay: 100,
+        // reset: true
+      });
+
+      // Configurações de revelação
+      const revealConfigs = [
+        { selector: `.home__data, .parteners`, config: {} },
+        { selector: `.home__img`, config: { delay: 300 } },
+        { selector: `.home__social`, config: { delay: 200 } },
+        { selector: `.about__img, .contact__box`, config: { origin: "left" } },
+        {
+          selector: `.about__data, .contact__form`,
+          config: { origin: "right" },
+        },
+        {
+          selector: `.steps__card, .product__card, .questions__group, .card__content`,
+          config: { interval: 100 },
+        },
+        { selector: `.section__title-center`, config: { interval: 100 } },
+        {
+          selector: `.feature-card, .about-differences__text`,
+          config: { interval: 100 },
+        },
+        {
+          selector: `.about-cta__content, .about-differences__content`,
+          config: { origin: "bottom" },
+        },
+        {
+          selector: `.partners__card`,
+          config: {
+            interval: 150,
+            origin: "bottom",
+            distance: "50px",
+          },
+        },
+      ];
+
+      // Aplica todas as configurações
+      revealConfigs.forEach((item) => {
+        const elements = document.querySelectorAll(item.selector);
+        if (elements.length > 0) {
+          sr.reveal(item.selector, item.config);
+        }
+      });
+    }
+  } catch (error) {
+    console.error("Error in ScrollReveal:", error);
+  }
+}
+
+/*=============== INITIALIZE ALL SCROLL FUNCTIONS ===============*/
+document.addEventListener("DOMContentLoaded", function () {
+  // Verifica se os elementos necessários existem
+  const hasSections = document.querySelectorAll("section[id]").length > 0;
+  const hasNavMenu = document.querySelector(".nav__menu") !== null;
+  const hasScrollUp = document.getElementById("scroll-up") !== null;
+
+  // Configura os event listeners
+  if (hasSections && hasNavMenu) {
+    window.addEventListener("scroll", scrollActive);
+    scrollActive(); // Executa uma vez no carregamento
+  }
+
+  if (hasScrollUp) {
+    window.addEventListener("scroll", scrollUp);
+    scrollUp(); // Executa uma vez no carregamento
+  }
+
+  // Inicializa ScrollReveal
+  initScrollReveal();
 });
 
-sr.reveal(`.home__data, .parteners`);
-sr.reveal(`.home__img`, { delay: 300 });
-sr.reveal(`.home__social`, { delay: 200 });
-sr.reveal(`.about__img, .contact__box`, { origin: "left" });
-sr.reveal(`.about__data, .contact__form`, { origin: "right" });
-sr.reveal(`.steps__card, .product__card, .questions__group, .card__content`, {
-  interval: 100,
-});
-sr.reveal(`.section__title-center`, { interval: 100 });
-sr.reveal(`.feature-card, .about-differences__text`, { interval: 100 });
-sr.reveal(`.about-cta__content, .about-differences__content`, {
-  origin: "bottom",
-});
-// Adicione isso ao seu arquivo JS existente
-sr.reveal(`.partners__card`, { 
-    interval: 150,
-    origin: 'bottom',
-    distance: '50px'
-});
+/*=============== DEBOUNCE FOR SCROLL EVENTS ===============*/
+// Melhora performance em eventos de scroll
+function debounce(func, wait = 10, immediate = true) {
+  let timeout;
+  return function () {
+    const context = this,
+      args = arguments;
+    const later = function () {
+      timeout = null;
+      if (!immediate) func.apply(context, args);
+    };
+    const callNow = immediate && !timeout;
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+    if (callNow) func.apply(context, args);
+  };
+}
+
+// Aplica debounce aos eventos de scroll (opcional para melhor performance)
+window.addEventListener("scroll", debounce(scrollActive));
+window.addEventListener("scroll", debounce(scrollUp));
 
 //**
 // ! Script de Planos dados sobre eles!
@@ -614,3 +699,309 @@ document.addEventListener("DOMContentLoaded", function () {
  */
 
 document.querySelector(".year").textContent = new Date().getFullYear();
+
+// Adicionar feedback tátil ao checkbox
+document.querySelectorAll(".modern-checkbox").forEach((checkbox) => {
+  checkbox.addEventListener("click", function (e) {
+    if (e.target.tagName === "INPUT") return;
+
+    const ripple = document.createElement("span");
+    ripple.classList.add("ripple-effect");
+    const checkmark = this.querySelector(".checkmark");
+    checkmark.appendChild(ripple);
+
+    // Posiciona o efeito de ripple onde o usuário clicou
+    const rect = checkmark.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    ripple.style.left = `${x}px`;
+    ripple.style.top = `${y}px`;
+
+    // Remove o efeito após a animação
+    ripple.addEventListener("animationend", () => {
+      ripple.remove();
+    });
+  });
+});
+
+// Adicionar CSS para o efeito ripple
+const rippleStyle = document.createElement("style");
+rippleStyle.textContent = `
+  .ripple-effect {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.7);
+    transform: scale(0);
+    animation: ripple 0.6s linear;
+    pointer-events: none;
+    width: 100px;
+    height: 100px;
+    margin-left: -50px;
+    margin-top: -50px;
+  }
+  
+  @keyframes ripple {
+    to {
+      transform: scale(4);
+      opacity: 0;
+    }
+  }
+`;
+document.head.appendChild(rippleStyle);
+
+document.addEventListener("DOMContentLoaded", function () {
+  // =============== FUNÇÕES GERAIS ===============
+
+  /**
+   * Abre um modal específico
+   * @param {HTMLElement} modal - Elemento do modal a ser aberto
+   */
+  function openModal(modal) {
+    if (!modal) return;
+    modal.style.display = "block";
+    modal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+    document.documentElement.style.paddingRight = getScrollbarWidth() + "px";
+  }
+
+  /**
+   * Fecha um modal específico
+   * @param {HTMLElement} modal - Elemento do modal a ser fechado
+   */
+  function closeModal(modal) {
+    if (!modal) return;
+    modal.style.display = "none";
+    modal.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "auto";
+    document.documentElement.style.paddingRight = "";
+  }
+
+  /**
+   * Calcula a largura da barra de rolagem
+   */
+  function getScrollbarWidth() {
+    return window.innerWidth - document.documentElement.clientWidth;
+  }
+
+  // =============== CONTROLE DE MODAIS ===============
+
+  // Abrir modal de gerenciamento de dados
+  const manageDataBtn = document.getElementById("manageDataBtn");
+  if (manageDataBtn) {
+    manageDataBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+      openModal(document.getElementById("dataManagementModal"));
+    });
+  }
+
+  // Fechar modais ao clicar no botão de fechar
+  document.querySelectorAll(".close, .status-close").forEach((btn) => {
+    btn.addEventListener("click", function () {
+      const modal = this.closest(".modal");
+      closeModal(modal);
+    });
+  });
+
+  // Fechar ao clicar fora do conteúdo do modal
+  document.addEventListener("click", function (e) {
+    if (e.target.classList.contains("modal")) {
+      closeModal(e.target);
+    }
+  });
+
+  // Fechar com ESC
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") {
+      document
+        .querySelectorAll('.modal[aria-hidden="false"]')
+        .forEach((modal) => {
+          closeModal(modal);
+        });
+    }
+  });
+
+  // =============== CONTROLE DE ABAS ===============
+
+  // Controle de abas no modal LGPD
+  const tabBtns = document.querySelectorAll(".tab-btn");
+  const tabContents = document.querySelectorAll(".tab-content");
+
+  tabBtns.forEach((btn) => {
+    btn.addEventListener("click", function () {
+      const tabId = this.getAttribute("data-tab");
+
+      // Remove active de todos
+      tabBtns.forEach((b) => b.classList.remove("active"));
+      tabContents.forEach((c) => c.classList.remove("active"));
+
+      // Adiciona active ao selecionado
+      this.classList.add("active");
+      document.getElementById(`${tabId}-tab`).classList.add("active");
+    });
+  });
+
+  // Mostrar/ocultar campo de detalhes no formulário LGPD
+  const requestType = document.getElementById("request-type");
+  const detailsGroup = document.getElementById("details-group");
+
+  if (requestType && detailsGroup) {
+    requestType.addEventListener("change", function () {
+      detailsGroup.style.display = this.value === "other" ? "block" : "none";
+    });
+  }
+
+  // =============== CONTROLE DE FORMULÁRIOS ===============
+
+  /**
+   * Mostra o modal de status (sucesso/erro)
+   * @param {string} type - 'success' ou 'error'
+   * @param {string} message - Mensagem personalizada (opcional)
+   */
+  function showStatusModal(type, message = "") {
+    const modalId = type === "success" ? "confirmationModal" : "errorModal";
+    const modal = document.getElementById(modalId);
+
+    if (modal) {
+      if (type === "error" && message) {
+        const errorMessage = modal.querySelector("#errorMessage");
+        if (errorMessage) errorMessage.textContent = message;
+      }
+
+      openModal(modal);
+    }
+  }
+
+  /**
+   * Envia um formulário via AJAX
+   * @param {HTMLFormElement} form - Elemento do formulário
+   * @param {string} formType - Tipo do formulário ('contact' ou 'data')
+   */
+  async function submitForm(form, formType) {
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalText = submitBtn.innerHTML;
+
+    try {
+      // Estado de carregamento
+      submitBtn.innerHTML = '<i class="ri-loader-4-line spin"></i> Enviando...';
+      submitBtn.disabled = true;
+
+      // Coleta os dados do formulário
+      const formData = new FormData(form);
+
+      // Converte para JSON se necessário (para o formulário LGPD)
+      const formDataObj = {};
+      formData.forEach((value, key) => (formDataObj[key] = value));
+
+      // Envia a requisição
+      const response = await fetch(form.action, {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formDataObj),
+      });
+
+      // Verifica se a resposta é OK
+      if (!response.ok) {
+        throw new Error(`Erro HTTP: ${response.status}`);
+      }
+
+      // Processa a resposta JSON
+      const data = await response.json();
+
+      // Verifica se o servidor retornou sucesso
+      if (!data.success) {
+        throw new Error(data.message || "Erro no processamento");
+      }
+
+      // Fecha o modal do formulário
+      const formModalId =
+        formType === "contact" ? "proposalModal" : "dataManagementModal";
+      const formModal = document.getElementById(formModalId);
+      if (formModal) closeModal(formModal);
+
+      // Mostra modal de sucesso
+      showStatusModal("success");
+
+      // Reseta o formulário
+      form.reset();
+    } catch (error) {
+      console.error("Erro no formulário:", error);
+      // Mostra modal de erro com mensagem
+      showStatusModal("error", error.message || "Erro ao enviar formulário");
+    } finally {
+      // Restaura o botão
+      submitBtn.innerHTML = originalText;
+      submitBtn.disabled = false;
+    }
+  }
+
+  // Formulário de contato (proposta)
+  const contactForm = document.getElementById("modalForm");
+  if (contactForm) {
+    contactForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      submitForm(this, "contact");
+    });
+  }
+
+  // Formulário LGPD (gerenciamento de dados)
+  const dataRequestForm = document.getElementById("dataRequestForm");
+  if (!dataRequestForm) {
+    // Tenta encontrar o formulário dentro do modal
+    const dataManagementModal = document.getElementById("dataManagementModal");
+    if (dataManagementModal) {
+      const form = dataManagementModal.querySelector("form");
+      if (form) {
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          submitForm(this, "data");
+        });
+      }
+    }
+  } else {
+    dataRequestForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      submitForm(this, "data");
+    });
+  }
+
+  // =============== MÁSCARAS DE FORMULÁRIO ===============
+
+  // Máscara para telefone
+  const phoneInput = document.getElementById("phone");
+  if (phoneInput) {
+    phoneInput.addEventListener("input", function (e) {
+      let value = this.value.replace(/\D/g, "");
+      if (value.length > 11) value = value.substring(0, 11);
+
+      // Aplica a máscara (00) 00000-0000
+      if (value.length > 2) {
+        value = `(${value.substring(0, 2)}) ${value.substring(2)}`;
+      }
+      if (value.length > 10) {
+        value = `${value.substring(0, 10)}-${value.substring(10)}`;
+      }
+
+      this.value = value;
+    });
+  }
+
+  // =============== ESTILOS DINÂMICOS ===============
+
+  // Estilo para o spinner
+  const style = document.createElement("style");
+  style.textContent = `
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    .spin {
+      animation: spin 1s linear infinite;
+      display: inline-block;
+    }
+  `;
+  document.head.appendChild(style);
+});

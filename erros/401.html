@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erro <span class="error-code">401</span> | BGM Inovações</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --background: #0f172a;
+            --text: #f8fafc;
+            --text-secondary: #94a3b8;
+            --error: #ef4444;
+            --success: #10b981;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--background);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        .error-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .error-content {
+            max-width: 600px;
+            text-align: center;
+            position: relative;
+        }
+
+        .error-code {
+            font-size: 8rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, var(--primary), var(--error));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            line-height: 1;
+            margin-bottom: 1rem;
+            animation: pulse 2s infinite alternate;
+        }
+
+        .error-title {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+
+        .error-message {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .home-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .home-link:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .grid-effect {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.15;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            100% {
+                transform: scale(1.05);
+            }
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .error-code {
+                font-size: 6rem;
+            }
+
+            .error-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="error-container">
+        <canvas id="gridCanvas" class="grid-effect"></canvas>
+        <canvas id="particles" class="particles"></canvas>
+
+        <div class="error-content">
+            <div class="error-code">401</div>
+            <h1 class="error-title">Não Autorizado</h1>
+            <p class="error-message">
+                Você precisa estar autenticado para acessar esta página. Faça login e tente novamente.
+            </p>
+            <a href="/" class="home-link">
+                <i class="ri-home-4-line"></i> Voltar para a página inicial
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Efeito de rede/grid interativo
+        const gridCanvas = document.getElementById('gridCanvas');
+        const gridCtx = gridCanvas.getContext('2d');
+
+        // Efeito de partículas
+        const particlesCanvas = document.getElementById('particles');
+        const particlesCtx = particlesCanvas.getContext('2d');
+
+        // Configurações ajustáveis
+        const config = {
+            grid: {
+                cellSize: 50,
+                lineColor: 'rgba(59, 130, 246, 0.5)',
+                activeColor: 'rgba(239, 68, 68, 0.8)',
+                lineWidth: 1
+            },
+            particles: {
+                count: 50,
+                color: 'rgba(59, 130, 246, 0.8)',
+                minSize: 1,
+                maxSize: 3,
+                speed: 0.5
+            }
+        };
+
+        // Inicializa os canvases
+        function initCanvases() {
+            gridCanvas.width = window.innerWidth;
+            gridCanvas.height = window.innerHeight;
+
+            particlesCanvas.width = window.innerWidth;
+            particlesCanvas.height = window.innerHeight;
+
+            drawGrid();
+            initParticles();
+            animateParticles();
+
+            // Interação com o grid
+            gridCanvas.addEventListener('mousemove', handleGridInteraction);
+            window.addEventListener('resize', handleResize);
+        }
+
+        // Desenha o grid estático
+        function drawGrid() {
+            gridCtx.clearRect(0, 0, gridCanvas.width, gridCanvas.height);
+
+            const { cellSize, lineColor, lineWidth } = config.grid;
+            gridCtx.strokeStyle = lineColor;
+            gridCtx.lineWidth = lineWidth;
+
+            // Linhas verticais
+            for (let x = 0; x <= gridCanvas.width; x += cellSize) {
+                gridCtx.beginPath();
+                gridCtx.moveTo(x, 0);
+                gridCtx.lineTo(x, gridCanvas.height);
+                gridCtx.stroke();
+            }
+
+            // Linhas horizontais
+            for (let y = 0; y <= gridCanvas.height; y += cellSize) {
+                gridCtx.beginPath();
+                gridCtx.moveTo(0, y);
+                gridCtx.lineTo(gridCanvas.width, y);
+                gridCtx.stroke();
+            }
+        }
+
+        // Interação com o grid
+        function handleGridInteraction(e) {
+            const { cellSize, activeColor } = config.grid;
+            const mouseX = e.clientX;
+            const mouseY = e.clientY;
+
+            // Redesenha o grid
+            drawGrid();
+
+            // Calcula a célula mais próxima
+            const cellX = Math.round(mouseX / cellSize) * cellSize;
+            const cellY = Math.round(mouseY / cellSize) * cellSize;
+
+            // Desenha efeito na célula
+            gridCtx.fillStyle = activeColor;
+            gridCtx.beginPath();
+            gridCtx.arc(cellX, cellY, cellSize * 0.4, 0, Math.PI * 2);
+            gridCtx.fill();
+
+            // Linhas conectando ao cursor
+            gridCtx.beginPath();
+            gridCtx.moveTo(cellX, cellY);
+            gridCtx.lineTo(mouseX, mouseY);
+            gridCtx.strokeStyle = activeColor;
+            gridCtx.lineWidth = 2;
+            gridCtx.stroke();
+        }
+
+        // Sistema de partículas
+        let particlesArray = [];
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * particlesCanvas.width;
+                this.y = Math.random() * particlesCanvas.height;
+                this.size = Math.random() * (config.particles.maxSize - config.particles.minSize) + config.particles.minSize;
+                this.speedX = (Math.random() - 0.5) * config.particles.speed;
+                this.speedY = (Math.random() - 0.5) * config.particles.speed;
+            }
+
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+
+                // Rebate nas bordas
+                if (this.x < 0 || this.x > particlesCanvas.width) {
+                    this.speedX *= -1;
+                }
+
+                if (this.y < 0 || this.y > particlesCanvas.height) {
+                    this.speedY *= -1;
+                }
+            }
+
+            draw() {
+                particlesCtx.fillStyle = config.particles.color;
+                particlesCtx.beginPath();
+                particlesCtx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                particlesCtx.fill();
+            }
+        }
+
+        function initParticles() {
+            particlesArray = [];
+            for (let i = 0; i < config.particles.count; i++) {
+                particlesArray.push(new Particle());
+            }
+        }
+
+        function animateParticles() {
+            particlesCtx.clearRect(0, 0, particlesCanvas.width, particlesCanvas.height);
+
+            for (let i = 0; i < particlesArray.length; i++) {
+                particlesArray[i].update();
+                particlesArray[i].draw();
+            }
+
+            // Conecta partículas próximas
+            connectParticles();
+
+            requestAnimationFrame(animateParticles);
+        }
+
+        function connectParticles() {
+            let opacity = 1;
+            for (let a = 0; a < particlesArray.length; a++) {
+                for (let b = a; b < particlesArray.length; b++) {
+                    const distance = Math.sqrt(
+                        Math.pow(particlesArray[a].x - particlesArray[b].x, 2) +
+                        Math.pow(particlesArray[a].y - particlesArray[b].y, 2)
+                    );
+
+                    if (distance < 100) {
+                        opacity = 1 - (distance / 100);
+                        particlesCtx.strokeStyle = `rgba(59, 130, 246, ${opacity})`;
+                        particlesCtx.lineWidth = 1;
+                        particlesCtx.beginPath();
+                        particlesCtx.moveTo(particlesArray[a].x, particlesArray[a].y);
+                        particlesCtx.lineTo(particlesArray[b].x, particlesArray[b].y);
+                        particlesCtx.stroke();
+                    }
+                }
+            }
+        }
+
+        function handleResize() {
+            gridCanvas.width = window.innerWidth;
+            gridCanvas.height = window.innerHeight;
+            particlesCanvas.width = window.innerWidth;
+            particlesCanvas.height = window.innerHeight;
+            drawGrid();
+        }
+
+        // Inicializa tudo quando a página carrega
+        window.addEventListener('load', initCanvases);
+    </script>
+</body>
+
+</html>
