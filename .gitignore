@@ -1,0 +1,59 @@
+# Arquivos do sistema operacional
+.DS_Store
+Thumbs.db
+
+# Arquivos de ambiente
+.env
+.env.local
+.env.development
+.env.production
+
+# Diretórios de dependências
+/node_modules/
+/vendor/
+/composer.lock
+/package-lock.json
+/yarn.lock
+
+# Arquivos de IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Arquivos de build
+/dist/
+/build/
+/assets/css/*.map
+/assets/js/*.map
+
+# Arquivos de cache
+.cache/
+*.tmp
+
+# Arquivos de log
+*.log
+logs/
+/PHP/logs/
+
+# Arquivos de sistema
+*.bak
+*.save
+*.backup
+
+# Arquivos de sessão
+*.sess
+*.session
+
+# Arquivos de banco de dados
+*.sql
+*.sqlite
+
+# Arquivos de usuário
+*.orig
+*~
+
+# Arquivos específicos do projeto a ignorar
+/config.php
+/PHP/config.php
+/PHP/lgpd_requests.log
